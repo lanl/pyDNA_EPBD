@@ -1,0 +1,1 @@
+Do not change sequence order inside the selex_dataset/{xxx}.txt. This order is used as seq-id for each file.
