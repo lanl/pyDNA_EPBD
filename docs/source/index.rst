@@ -12,7 +12,7 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
    :maxdepth: 2
    :caption: Contents:
 
-   run/modules
+   modules/modules
 
 Indices and tables
 ==================

@@ -5,5 +5,7 @@ pyDNA_EPBD
    :maxdepth: 4
 
    input_reader
+   monitors
    run
+   simulation
    switch
