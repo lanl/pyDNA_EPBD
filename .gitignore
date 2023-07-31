@@ -1,4 +1,3 @@
-private/
 .idea
 __pycache__/
 *.py[cod]
@@ -47,3 +46,7 @@ coverage.xml
 *.pot
 # Sphinx documentation
 docs/_build/
+
+
+private/
+.vscode
