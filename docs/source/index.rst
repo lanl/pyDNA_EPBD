@@ -24,6 +24,7 @@ Resources
 * `Paper <https://tobeprovided>`_
 * `Code <https://github.com/lanl/pyDNA_EPBD>`_
 * `Analysis Notebooks <https://github.com/lanl/pyDNA_EPBD/tree/main/analysis>`_
+* `Utility of ML models <https://github.com/lanl/pyDNA_EPBD/tree/main/models>`
 
 
 Installation
@@ -32,9 +33,21 @@ Installation
       
       git clone https://github.com/lanl/pyDNA_EPBD.git
       cd pyDNA_EPBD
-      conda create -c conda-forge --name pydnaepbd_pypy39_conda pypy python=3.9
+      conda create -c conda-forge --name pydnaepbd_pypy39_conda pypy python=3.9 -y
       conda activate pydnaepbd_pypy39_conda
       python setup.py install
+
+
+      # Test to see if installation is successfull
+      Type python in the shell
+      >>>> from pydna_epbd.version import *
+      >>>> version
+      '1.0.0'
+
+      
+      # To remove the conda venv
+      conda deactivate
+      conda remove --name pydnaepbd_pypy39_conda --all -y
 
 Prerequisites
 ========================================

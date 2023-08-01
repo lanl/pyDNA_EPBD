@@ -11,26 +11,16 @@ Avg coordinate profile     |  Avg coordinate profile
 Assuming the current directory is for creating the environment for pyDNA-EPBD simulation tool
 
 ```
-conda create -c conda-forge -p pydnaepbd_pypy39_conda pypy python=3.9
-conda activate /path/to/venv/pydnaepbd_pypy39_conda
-pip install numpy # tested version: 1.25.1
-pip install joblib # tested version: 1.3.1
-```
-Note that, pypy package is important for faster execution of the simulation. The following packages are needed for analysis:
-```
-pip install scikit-learn # tested version: 1.3.0
-pip install pandas # tested version: 2.0.3
-pip install matplotlib # tested version: 3.7.2
+conda create -c conda-forge --name pydnaepbd_pypy39_conda pypy python=3.9
+conda activate pydnaepbd_pypy39_conda
+python setup.py install
 ```
 
 
 ## Sample MCMC simulation run
 Now activate the virtual environment and run the simulation.
 Default setup runs the MCMC simulation on P5 wild- and mutant-promoter sequences. The corresponding configurations are described below. This can be changed to run the simulation on an arbitrary number of DNA sequences.
-```
-conda activate pydna_epbd_conda_release_venv
-python run.py
-```
+
 
 ## Configuration file structure
 Must have following items (key, value) as space separated format. A sample configuration file (with slurm job file) with P5 wild- and mutant-promoter sequences are given in the inputs directory.

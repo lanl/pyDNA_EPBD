@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("../../pyDNA_EPBD/pyDNA_EPBD")
+sys.path.append("../../pyDNA_EPBD/pydna_epbd")
 
 # Configuration file for the Sphinx documentation builder.
 #

@@ -1,4 +1,4 @@
-pyDNA_EPBD
+pydna_epbd
 ==========
 
 .. toctree::
@@ -8,3 +8,4 @@ pyDNA_EPBD
    monitors
    run
    simulation
+   version
