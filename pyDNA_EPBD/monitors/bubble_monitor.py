@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from monitors.monitor import Monitor
 
 
@@ -52,5 +48,3 @@ class BubbleMonitor(Monitor):
                         self.bubbles[base_idx][length][tr_idx] += 1
                 if R == 0:
                     break
-
-

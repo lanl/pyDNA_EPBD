@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from math import log, exp
 from random import random, normalvariate
 

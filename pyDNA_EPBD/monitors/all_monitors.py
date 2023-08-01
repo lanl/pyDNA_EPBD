@@ -1,7 +1,4 @@
 import os
-import sys
-
-sys.path.append("../pyDNA_EPBD")
 
 from monitors.bubble_monitor import BubbleMonitor
 from monitors.coord_monitor import CoordMonitor
@@ -95,4 +92,3 @@ class Monitors:
         """Call monitors to record at the end of iterations."""
         for monitor in self.monitors:
             monitor.collect_at_iter()
-

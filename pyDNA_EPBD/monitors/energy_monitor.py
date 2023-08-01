@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from monitors.monitor import Monitor
 
 

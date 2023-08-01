@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from monitors.flipping_monitor import Monitor
 
 
@@ -34,4 +30,3 @@ class FlippingMonitorVerbose(Monitor):
             for j in range(self.FLIP_SIZES):
                 if self.dna.coords_dist[i] >= self.FLIP_CUTOFF[j]:
                     self.flip[i][j] += 1
-

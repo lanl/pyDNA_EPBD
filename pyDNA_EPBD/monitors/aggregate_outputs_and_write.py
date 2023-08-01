@@ -1,8 +1,4 @@
 import os
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 import utils.pickle_utils as utils
 import numpy as np
 
@@ -257,5 +253,3 @@ def aggregate_outputs_for_many_temp(
     print(f"\t---{seq_name}---")
     for key, _ in outputs.items():
         print("\t", key, utils.get_dimension(outputs[key]))
-
-

@@ -4,8 +4,7 @@ pyDNA_EPBD
 .. toctree::
    :maxdepth: 4
 
-   input_reader
+   configs
    monitors
    run
    simulation
-   switch

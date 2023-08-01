@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("../../pyDNA_EPBD")
+sys.path.append("../../pyDNA_EPBD/pyDNA_EPBD")
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -11,15 +11,24 @@ sys.path.append("../../pyDNA_EPBD")
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "pyDNA-EPBD"
-copyright = "2023, AK"
-author = "AK"
+copyright = "2023, LANL"
+author = "Anowarul Kabir, Manish Bhattarai, Kim Rasmussen, Amarda Shehu, Anny Usheva, Alan Bishop and Boian Alexandrov"
 release = "1.0.0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.duration", "sphinx.ext.autodoc", "sphinx.ext.viewcode"]
+extensions = [
+    "sphinx.ext.duration",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.autodoc",
+    "sphinx_automodapi.automodapi",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.viewcode",
+]
 
+autoclass_content = "both"
 templates_path = ["_templates"]
 exclude_patterns = []
 
@@ -27,5 +36,5 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "sphinx_book_theme" # alabaster
+html_theme = "sphinx_book_theme"  # alabaster, furo, sphinx_book_theme, sphinx_rtd_theme
 html_static_path = ["_static"]

@@ -1,17 +1,12 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
-
 # from dataclasses import dataclass
 # @dataclass(frozen=True)
-class InputLimits:  # immutable, not using decorator which makes codes slower
-    MAX_SEEDS = 4000
-    MAX_SEQUENCES = 25000
-    MAX_TEMPERATURES = 150
+# class InputLimits:  # immutable, not using decorator which makes codes slower
+#     MAX_SEEDS = 4000
+#     MAX_SEQUENCES = 25000
+#     MAX_TEMPERATURES = 150
 
-    MAX_BASES = 20000
-    MAX_STRING_LENGTH = 256
+#     MAX_BASES = 20000
+#     MAX_STRING_LENGTH = 256
 
 
 class InputConfigs:

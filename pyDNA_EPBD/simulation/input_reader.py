@@ -1,10 +1,8 @@
 import os
-import sys
 
-sys.path.append("../pyDNA_EPBD")
 home_dir = ""
 
-from simulation.configs import InputConfigs
+from configs.input_configs import InputConfigs
 
 
 def read_sequences_from_a_file(
@@ -144,5 +142,3 @@ def read_input_data(configuration_filepath):
     )
     print(input_configs)
     return input_configs
-
-

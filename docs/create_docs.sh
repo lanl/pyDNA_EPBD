@@ -22,6 +22,6 @@ make clean
 rm -rf ./source/modules
 
 # a module directory must have __init__.py in the directory
-sphinx-apidoc -o ./source/modules ../
+sphinx-apidoc -o ./source/modules ../pyDNA_EPBD/
 
 make html

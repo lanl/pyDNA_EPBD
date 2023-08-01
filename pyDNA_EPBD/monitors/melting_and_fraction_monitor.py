@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from monitors.monitor import Monitor
 
 
@@ -56,4 +52,3 @@ class MeltingAndFractionMonitor(Monitor):
         self.fraction = (
             fraction / self.dna.n_nt_bases
         )  # fraction of the bps got melted.
-

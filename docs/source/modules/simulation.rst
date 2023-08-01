@@ -4,14 +4,6 @@ simulation package
 Submodules
 ----------
 
-simulation.configs module
--------------------------
-
-.. automodule:: simulation.configs
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simulation.constants module
 ---------------------------
 
@@ -24,6 +16,14 @@ simulation.dna module
 ---------------------
 
 .. automodule:: simulation.dna
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simulation.input\_reader module
+-------------------------------
+
+.. automodule:: simulation.input_reader
    :members:
    :undoc-members:
    :show-inheritance:

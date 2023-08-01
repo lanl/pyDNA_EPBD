@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from monitors.monitor import Monitor
 
 
@@ -81,4 +77,3 @@ class MeltingAndFractionManyMonitor(Monitor):
 
             self.melting_many[time_step][thresh_idx] += melting
             self.fraction_many[time_step][thresh_idx] += fraction / self.dna.n_nt_bases
-

@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from simulation.dna import DNA
 from simulation.mc_simulation import Simulation
 from monitors.all_monitors import Monitors

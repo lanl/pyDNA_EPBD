@@ -1,7 +1,3 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 from monitors.monitor import Monitor
 
 
@@ -27,4 +23,3 @@ class CoordMonitor(Monitor):
         for i in range(self.dna.n_nt_bases):
             self.coord[i] += self.dna.coords_dist[i]
             self.coord_square[i] += self.dna.coords_dist[i] ** 2
-

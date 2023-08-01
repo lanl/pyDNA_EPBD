@@ -1,9 +1,8 @@
 import os
 import math
-import time
-import switch
 
-from input_reader import read_input_data
+import configs.switchs as switchs
+from simulation.input_reader import read_input_data
 from simulation.simulation_steps import run_sequences
 
 if __name__ == "__main__":
@@ -27,5 +26,3 @@ if __name__ == "__main__":
     print(f"job_idx:{job_idx}, n_seqs:{len(sequences)}")
 
     run_sequences(sequences, input_configs)
-
-
