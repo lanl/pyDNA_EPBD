@@ -23,6 +23,7 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
 Resources
 ========================================
 * `Paper <https://tobeprovided>`_
+* `Documentation <https://tobeprovided>`_
 * `Code <https://github.com/lanl/pyDNA_EPBD>`_
 * `Analysis Notebooks <https://github.com/lanl/pyDNA_EPBD/tree/main/analysis>`_
 * `Utility of ML models <https://github.com/lanl/pyDNA_EPBD/tree/main/models>`_
@@ -40,7 +41,7 @@ Installation
       python setup.py install
 
       # Test to see if installation is successfull
-      Type python in the shell
+      Type 'python' in the shell
       >>>> import pydna_epbd.version as v
       >>>> v.__version__
       '1.0.0'

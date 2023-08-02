@@ -40,3 +40,5 @@ exclude_patterns = ["version.py"]
 
 html_theme = "sphinx_book_theme"  # alabaster, furo, sphinx_book_theme, sphinx_rtd_theme
 html_static_path = ["_static"]
+
+pygments_style = "sphinx"

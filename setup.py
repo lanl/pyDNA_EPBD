@@ -6,7 +6,7 @@ from pydna_epbd.version import __version__
 
 
 # add readme
-with open("README.md", "r") as f:
+with open("README.rst", "r") as f:
     LONG_DESCRIPTION = f.read()
 
 # add dependencies
