@@ -212,23 +212,24 @@ Authors
 How to Cite pyDNA-EPBD?
 ========================================
 
+.. code-block:: console
 
-@software{pyDNA_EPBD,
-  author       = {Kabir, Anowarul and 
-                  Bhattarai, Manish and
-                  Rasmussen, Kim and 
-                  Shehu, Amarda and 
-                  Usheva, Anny and 
-                  Bishop, Alan and 
-                  Alexandrov, Boian},
-  title        = {ppyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation},
-  month        = Aug,
-  year         = 2023,
-  publisher    = {Zenodo},
-  version      = {v1.0.0},
-  doi          = {10.5281/zenodo.5758446},
-  url          = {https://doi.org/10.5281/zenodo.5758446}
-}
+      @software{pyDNA_EPBD,
+      author       = {Kabir, Anowarul and 
+                        Bhattarai, Manish and
+                        Rasmussen, Kim and 
+                        Shehu, Amarda and 
+                        Usheva, Anny and 
+                        Bishop, Alan and 
+                        Alexandrov, Boian},
+      title        = {ppyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation},
+      month        = Aug,
+      year         = 2023,
+      publisher    = {Zenodo},
+      version      = {v1.0.0},
+      doi          = {10.5281/zenodo.5758446},
+      url          = {https://doi.org/10.5281/zenodo.5758446}
+      }
 
 
 

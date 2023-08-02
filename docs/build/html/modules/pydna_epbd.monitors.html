@@ -1,0 +1,1036 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>pydna_epbd.monitors package &#8212; pyDNA-EPBD 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/pydna_epbd.monitors';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pydna_epbd.simulation package" href="pydna_epbd.simulation.html" />
+    <link rel="prev" title="pydna_epbd.configs package" href="pydna_epbd.configs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">pyDNA-EPBD 1.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pydna_epbd</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pydna_epbd.html">pydna_epbd package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.configs.html">pydna_epbd.configs package</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">pydna_epbd.monitors package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html">pydna_epbd.simulation package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.utils.html">pydna_epbd.utils package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/modules/pydna_epbd.monitors.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pydna_epbd.monitors package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.aggregate_outputs_and_write">pydna_epbd.monitors.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.all_monitors">pydna_epbd.monitors.all_monitors module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors"><code class="docutils literal notranslate"><span class="pre">Monitors</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_iter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_step_preheat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.update_state"><code class="docutils literal notranslate"><span class="pre">Monitors.update_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.bubble_monitor">pydna_epbd.monitors.bubble_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MAX_BUB_ELEM"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.MAX_BUB_ELEM</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MIN_BUB_ELEM"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.MIN_BUB_ELEM</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLDS"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.TRESHOLDS</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLD_SIZE"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.TRESHOLD_SIZE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.coord_monitor">pydna_epbd.monitors.coord_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.coord_monitor.CoordMonitor"><code class="docutils literal notranslate"><span class="pre">CoordMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.coord_monitor.CoordMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">CoordMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.coord_monitor_verbose">pydna_epbd.monitors.coord_monitor_verbose module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.energy_monitor">pydna_epbd.monitors.energy_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.KB"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.KB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.collect_at_step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.collect_at_step_preheat()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.flipping_monitor">pydna_epbd.monitors.flipping_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.FLIP_CUTOFF"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor.FLIP_CUTOFF</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.flipping_monitor_verbose">pydna_epbd.monitors.flipping_monitor_verbose module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_CUTOFF"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.FLIP_CUTOFF</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_SIZES"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.FLIP_SIZES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.collect_at_step"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.melting_and_fraction_many_monitor">pydna_epbd.monitors.melting_and_fraction_many_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.melting_and_fraction_monitor">pydna_epbd.monitors.melting_and_fraction_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.collect_at_iter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.monitor">pydna_epbd.monitors.monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor"><code class="docutils literal notranslate"><span class="pre">Monitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_iter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_step_preheat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_temp"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_temp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.update_state"><code class="docutils literal notranslate"><span class="pre">Monitor.update_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pydna-epbd-monitors-package">
+<h1>pydna_epbd.monitors package<a class="headerlink" href="#pydna-epbd-monitors-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pydna_epbd.monitors.aggregate_outputs_and_write">
+<span id="pydna-epbd-monitors-aggregate-outputs-and-write-module"></span><h2>pydna_epbd.monitors.aggregate_outputs_and_write module<a class="headerlink" href="#module-pydna_epbd.monitors.aggregate_outputs_and_write" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.aggregate_outputs_and_write.</span></span><span class="sig-name descname"><span class="pre">aggregate_outputs_for_single_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_monitors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_configs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/aggregate_outputs_and_write.html#aggregate_outputs_for_single_temp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp" title="Permalink to this definition">#</a></dt>
+<dd><p>Collect outputs of all the monitors from independent iterations and save them as dictionary object.
+An example output pickle file looks like the following when only the bubble and coordinate monitors are switched on:
+{“bubbles”: numpy.ndarray, “coord”: numpy.ndarray}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list_of_monitors</strong> (<em>list</em>) – List of monitors.</p></li>
+<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.configs.html#pydna_epbd.configs.input_configs.InputConfigs" title="pydna_epbd.configs.input_configs.InputConfigs"><em>InputConfigs</em></a>) – An InputConfigs object.</p></li>
+<li><p><strong>out_filepath</strong> (<em>str</em>) – Directory path to save the simulation output.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.all_monitors">
+<span id="pydna-epbd-monitors-all-monitors-module"></span><h2>pydna_epbd.monitors.all_monitors module<a class="headerlink" href="#module-pydna_epbd.monitors.all_monitors" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.all_monitors.Monitors">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.all_monitors.</span></span><span class="sig-name descname"><span class="pre">Monitors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_preheating_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps_after_preheating</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/all_monitors.html#Monitors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.all_monitors.Monitors" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>All monitors to apply for the same DNA object.</p>
+<p>Initialize all the monitors if the corresponding switches are on/off.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p></li>
+<li><p><strong>n_preheating_steps</strong> (<em>int</em>) – Number of preheating steps.</p></li>
+<li><p><strong>n_steps_after_preheating</strong> (<em>int</em>) – Number of post-preheating steps.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter">
+<span class="sig-name descname"><span class="pre">collect_at_iter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/all_monitors.html#Monitors.collect_at_iter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>Call monitors to record at the end of iterations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.all_monitors.Monitors.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/all_monitors.html#Monitors.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Call monitors to record at post-preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.all_monitors.Monitors.collect_at_step_preheat">
+<span class="sig-name descname"><span class="pre">collect_at_step_preheat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/all_monitors.html#Monitors.collect_at_step_preheat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step_preheat" title="Permalink to this definition">#</a></dt>
+<dd><p>Call monitors to record at preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.all_monitors.Monitors.update_state">
+<span class="sig-name descname"><span class="pre">update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/all_monitors.html#Monitors.update_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.all_monitors.Monitors.update_state" title="Permalink to this definition">#</a></dt>
+<dd><p>Update state for all monitors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seq_id</strong> (<em>str</em>) – Sequence id.</p></li>
+<li><p><strong>temp</strong> (<em>float</em>) – Simulation temperature.</p></li>
+<li><p><strong>iter_no</strong> (<em>int</em>) – Iteration number.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.bubble_monitor">
+<span id="pydna-epbd-monitors-bubble-monitor-module"></span><h2>pydna_epbd.monitors.bubble_monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.bubble_monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.bubble_monitor.BubbleMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.bubble_monitor.</span></span><span class="sig-name descname"><span class="pre">BubbleMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/bubble_monitor.html#BubbleMonitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>The bubble monitor collects DNA bubbles for each bp at different thresholds.
+For a threshold, if a bps distance is more than the threshold, it computes the
+bubble length starting from that bp until the next bps distance is less
+than the threshold. In this implementation, the minimum and maximum bubble length are
+considered in between 3 and 20, inclusive. The number of thresholds are set to 20 by
+default from 0.5 Angstrom to 10.5 Angstrom with step size 0.5 Angstrom.</p>
+<p>Initialize BubbleMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MAX_BUB_ELEM">
+<span class="sig-name descname"><span class="pre">MAX_BUB_ELEM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MAX_BUB_ELEM" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MIN_BUB_ELEM">
+<span class="sig-name descname"><span class="pre">MIN_BUB_ELEM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MIN_BUB_ELEM" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLDS">
+<span class="sig-name descname"><span class="pre">TRESHOLDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[0.5,</span> <span class="pre">1.0,</span> <span class="pre">1.5,</span> <span class="pre">2.0,</span> <span class="pre">2.5,</span> <span class="pre">3.0,</span> <span class="pre">3.5,</span> <span class="pre">4.0,</span> <span class="pre">4.5,</span> <span class="pre">5.0,</span> <span class="pre">5.5,</span> <span class="pre">6.0,</span> <span class="pre">6.5,</span> <span class="pre">7.0,</span> <span class="pre">7.5,</span> <span class="pre">8.0,</span> <span class="pre">8.5,</span> <span class="pre">9.0,</span> <span class="pre">9.5,</span> <span class="pre">10.0]</span></em><a class="headerlink" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLDS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLD_SIZE">
+<span class="sig-name descname"><span class="pre">TRESHOLD_SIZE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLD_SIZE" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.bubble_monitor.BubbleMonitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/bubble_monitor.html#BubbleMonitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Collects bubbles at every post-preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.coord_monitor">
+<span id="pydna-epbd-monitors-coord-monitor-module"></span><h2>pydna_epbd.monitors.coord_monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.coord_monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.coord_monitor.CoordMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.coord_monitor.</span></span><span class="sig-name descname"><span class="pre">CoordMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/coord_monitor.html#CoordMonitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.coord_monitor.CoordMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>The coordinate monitor collects each bps distance and squared-distance at every post-preheating step.</p>
+<p>Initialize CoordMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.coord_monitor.CoordMonitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/coord_monitor.html#CoordMonitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.coord_monitor.CoordMonitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Collect bps distance and squared-distance at every post-preheating step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.coord_monitor_verbose">
+<span id="pydna-epbd-monitors-coord-monitor-verbose-module"></span><h2>pydna_epbd.monitors.coord_monitor_verbose module<a class="headerlink" href="#module-pydna_epbd.monitors.coord_monitor_verbose" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pydna_epbd.monitors.energy_monitor">
+<span id="pydna-epbd-monitors-energy-monitor-module"></span><h2>pydna_epbd.monitors.energy_monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.energy_monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.energy_monitor.EnergyMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.energy_monitor.</span></span><span class="sig-name descname"><span class="pre">EnergyMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_steps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/energy_monitor.html#EnergyMonitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>The energy monitor collects total energy (in Kelvin) at every preheating and post preheating step.</p>
+<p>Initialize EnergyMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p></li>
+<li><p><strong>total_steps</strong> (<em>int</em>) – Total number of steps.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.energy_monitor.EnergyMonitor.KB">
+<span class="sig-name descname"><span class="pre">KB</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8.61733034e-05</span></em><a class="headerlink" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.KB" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/energy_monitor.html#EnergyMonitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Collect energies at post-preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step_preheat">
+<span class="sig-name descname"><span class="pre">collect_at_step_preheat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/energy_monitor.html#EnergyMonitor.collect_at_step_preheat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step_preheat" title="Permalink to this definition">#</a></dt>
+<dd><p>Collect energies at preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.flipping_monitor">
+<span id="pydna-epbd-monitors-flipping-monitor-module"></span><h2>pydna_epbd.monitors.flipping_monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.flipping_monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor.FlippingMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.flipping_monitor.</span></span><span class="sig-name descname"><span class="pre">FlippingMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/flipping_monitor.html#FlippingMonitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>The flipping monitor collects flipping characteristics for each bp at every post preheating steps
+at a predefined threshold.</p>
+<p>initialize FlippingMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor.FlippingMonitor.FLIP_CUTOFF">
+<span class="sig-name descname"><span class="pre">FLIP_CUTOFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.707106781186548</span></em><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.FLIP_CUTOFF" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor.FlippingMonitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/flipping_monitor.html#FlippingMonitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Collects flipping characteristics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.flipping_monitor_verbose">
+<span id="pydna-epbd-monitors-flipping-monitor-verbose-module"></span><h2>pydna_epbd.monitors.flipping_monitor_verbose module<a class="headerlink" href="#module-pydna_epbd.monitors.flipping_monitor_verbose" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.flipping_monitor_verbose.</span></span><span class="sig-name descname"><span class="pre">FlippingMonitorVerbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/flipping_monitor_verbose.html#FlippingMonitorVerbose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>The flipping verbose monitor collects flipping characteristics for different thresholds.</p>
+<p>initialize FlippingMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_CUTOFF">
+<span class="sig-name descname"><span class="pre">FLIP_CUTOFF</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[0.707106781186548,</span> <span class="pre">1.414213562373096,</span> <span class="pre">2.121320343559644,</span> <span class="pre">2.828427124746192,</span> <span class="pre">3.53553390593274]</span></em><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_CUTOFF" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_SIZES">
+<span class="sig-name descname"><span class="pre">FLIP_SIZES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5</span></em><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_SIZES" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/flipping_monitor_verbose.html#FlippingMonitorVerbose.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Collects flipping characteristics considering different thresholds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.melting_and_fraction_many_monitor">
+<span id="pydna-epbd-monitors-melting-and-fraction-many-monitor-module"></span><h2>pydna_epbd.monitors.melting_and_fraction_many_monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.melting_and_fraction_many_monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.melting_and_fraction_many_monitor.</span></span><span class="sig-name descname"><span class="pre">MeltingAndFractionManyMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_preheating_steps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/melting_and_fraction_many_monitor.html#MeltingAndFractionManyMonitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>This collects whether the DNA is melted and the fraction of DNA base-pairs melted,
+as in melting and fraction monitor, at many different time steps and thresholds.
+By default, it collects melting and fraction observations 100 time steps throughout
+the post preheating steps in an evenly separated manner. And twenty thresholds are chosen
+in between [0.5, 2.5) Angstrom with step size 0.1.</p>
+<p>Initialize MeltingAndFractionManyMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p></li>
+<li><p><strong>n_steps_after_preheating</strong> (<em>int</em>) – Number of post-preheating steps.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES">
+<span class="sig-name descname"><span class="pre">MELT_FRACTION_SIZES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">20</span></em><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS">
+<span class="sig-name descname"><span class="pre">MELT_FRACTION_TIME_STEPS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS">
+<span class="sig-name descname"><span class="pre">MELT_FRACTION_TRESHOLDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[0.5,</span> <span class="pre">0.6,</span> <span class="pre">0.7,</span> <span class="pre">0.8,</span> <span class="pre">0.9,</span> <span class="pre">1.0,</span> <span class="pre">1.1,</span> <span class="pre">1.2,</span> <span class="pre">1.3,</span> <span class="pre">1.4,</span> <span class="pre">1.5,</span> <span class="pre">1.6,</span> <span class="pre">1.7,</span> <span class="pre">1.8,</span> <span class="pre">1.9,</span> <span class="pre">2.0,</span> <span class="pre">2.1,</span> <span class="pre">2.2,</span> <span class="pre">2.3,</span> <span class="pre">2.4]</span></em><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/melting_and_fraction_many_monitor.html#MeltingAndFractionManyMonitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Melting and fraction characteristics are collected at various time steps thoughout the post preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.melting_and_fraction_monitor">
+<span id="pydna-epbd-monitors-melting-and-fraction-monitor-module"></span><h2>pydna_epbd.monitors.melting_and_fraction_monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.melting_and_fraction_monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.melting_and_fraction_monitor.</span></span><span class="sig-name descname"><span class="pre">MeltingAndFractionMonitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps_after_preheating</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/melting_and_fraction_monitor.html#MeltingAndFractionMonitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pydna_epbd.monitors.monitor.Monitor" title="pydna_epbd.monitors.monitor.Monitor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Monitor</span></code></a></p>
+<p>Melting and fraction characteristics recording monitor at predefined threhold.
+At the end of each iteration, this monitor decides whether the DNA is melted or not at every bp by checking
+that any of the bp’s average coordinate distance is less than a predefined melting threshold (here 0.5 Angstrom).
+In another word, if all bps average coordinate distance is more or equal to the threshold, then it is melted.
+In addition, the fraction computes the fraction of bps that have melted. Therefore, if the DNA melted, the fraction is 1.0.</p>
+<p>Initialize MeltingAndFractionMonitor object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p></li>
+<li><p><strong>n_steps_after_preheating</strong> (<em>int</em>) – Number of post-preheating steps.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD">
+<span class="sig-name descname"><span class="pre">MELT_FRACTION_TRESHOLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.5</span></em><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_iter">
+<span class="sig-name descname"><span class="pre">collect_at_iter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/melting_and_fraction_monitor.html#MeltingAndFractionMonitor.collect_at_iter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>Melting and fraction characteristics are collected at the end of the iteration.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/melting_and_fraction_monitor.html#MeltingAndFractionMonitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>Melting and fraction characteristics are collected at step_no.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Step number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors.monitor">
+<span id="pydna-epbd-monitors-monitor-module"></span><h2>pydna_epbd.monitors.monitor module<a class="headerlink" href="#module-pydna_epbd.monitors.monitor" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.monitor.Monitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.monitor.</span></span><span class="sig-name descname"><span class="pre">Monitor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><span class="pre">DNA</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/monitor.html#Monitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.monitor.Monitor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The monitor to collect various aspects of the simulation.</p>
+<p>Initialize Monitor object for the input DNA object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dna</strong> (<a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.monitor.Monitor.collect_at_iter">
+<span class="sig-name descname"><span class="pre">collect_at_iter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/monitor.html#Monitor.collect_at_iter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_iter" title="Permalink to this definition">#</a></dt>
+<dd><p>The characteristics to collect at the end of each iteration.
+The corresponding iteration number is updated in the update_state function
+Optional, since not all child monitors need to record at iteration end.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.monitor.Monitor.collect_at_step">
+<span class="sig-name descname"><span class="pre">collect_at_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/monitor.html#Monitor.collect_at_step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_step" title="Permalink to this definition">#</a></dt>
+<dd><p>The characteristics to collect at post-preheating steps.
+Abstract method to be implemented by the child monitors,
+to collect specific aspects of the MCMC simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Iteration number.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – The child monitors must implement this.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.monitor.Monitor.collect_at_step_preheat">
+<span class="sig-name descname"><span class="pre">collect_at_step_preheat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">step_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/monitor.html#Monitor.collect_at_step_preheat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_step_preheat" title="Permalink to this definition">#</a></dt>
+<dd><p>The characteristics to collect at preheating steps.
+Optional, since not all child monitors need to record at preheating steps.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>step_no</strong> (<em>int</em>) – Iteration number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.monitor.Monitor.collect_at_temp">
+<span class="sig-name descname"><span class="pre">collect_at_temp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/monitor.html#Monitor.collect_at_temp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_temp" title="Permalink to this definition">#</a></dt>
+<dd><p>The characteristics to collect specifically for each temperature.
+The corresponding temperature is updated in the update_state function
+Optional, since not all child monitors need to record at temperature end.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.monitors.monitor.Monitor.update_state">
+<span class="sig-name descname"><span class="pre">update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/monitor.html#Monitor.update_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.monitor.Monitor.update_state" title="Permalink to this definition">#</a></dt>
+<dd><p>State of a monitor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seq_id</strong> (<em>str</em>) – Sequence id.</p></li>
+<li><p><strong>temp</strong> (<em>float</em>) – Simulation temperature.</p></li>
+<li><p><strong>iter_no</strong> (<em>int</em>) – Iteration number.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.monitors">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pydna_epbd.monitors" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pydna_epbd.configs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pydna_epbd.configs package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pydna_epbd.simulation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pydna_epbd.simulation package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.aggregate_outputs_and_write">pydna_epbd.monitors.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.all_monitors">pydna_epbd.monitors.all_monitors module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors"><code class="docutils literal notranslate"><span class="pre">Monitors</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_iter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_step_preheat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.update_state"><code class="docutils literal notranslate"><span class="pre">Monitors.update_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.bubble_monitor">pydna_epbd.monitors.bubble_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MAX_BUB_ELEM"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.MAX_BUB_ELEM</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MIN_BUB_ELEM"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.MIN_BUB_ELEM</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLDS"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.TRESHOLDS</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLD_SIZE"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.TRESHOLD_SIZE</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.coord_monitor">pydna_epbd.monitors.coord_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.coord_monitor.CoordMonitor"><code class="docutils literal notranslate"><span class="pre">CoordMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.coord_monitor.CoordMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">CoordMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.coord_monitor_verbose">pydna_epbd.monitors.coord_monitor_verbose module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.energy_monitor">pydna_epbd.monitors.energy_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.KB"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.KB</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.collect_at_step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.collect_at_step_preheat()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.flipping_monitor">pydna_epbd.monitors.flipping_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.FLIP_CUTOFF"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor.FLIP_CUTOFF</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.flipping_monitor_verbose">pydna_epbd.monitors.flipping_monitor_verbose module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_CUTOFF"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.FLIP_CUTOFF</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_SIZES"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.FLIP_SIZES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.collect_at_step"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.melting_and_fraction_many_monitor">pydna_epbd.monitors.melting_and_fraction_many_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.melting_and_fraction_monitor">pydna_epbd.monitors.melting_and_fraction_monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.collect_at_iter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.monitor">pydna_epbd.monitors.monitor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor"><code class="docutils literal notranslate"><span class="pre">Monitor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_iter()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_step()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_step_preheat()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.collect_at_temp"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_temp()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.monitor.Monitor.update_state"><code class="docutils literal notranslate"><span class="pre">Monitor.update_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Anowarul Kabir, Manish Bhattarai, Kim Rasmussen, Amarda Shehu, Anny Usheva, Alan Bishop and Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, LANL.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
