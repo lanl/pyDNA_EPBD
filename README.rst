@@ -106,7 +106,7 @@ Input DNA sequences, simulation configurations and switches should be in place t
 
 Example Usage
 ========================================
-**Option 1: Using single computing node.** 
+**Option 1: Using single computing node or local machine.** 
 *python examples/p5/run.py*
 
 .. code-block:: python
@@ -162,11 +162,11 @@ Now all the input DNA sequences will be divided into Six chunks to run independe
 
 Acknowledgments
 ========================================
-
+Los Alamos National Lab (LANL), T-1
 
 Copyright Notice
 ========================================
-
+© (or copyright) 2023. Triad National Security, LLC. All rights reserved. This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S. Department of Energy/National Nuclear Security Administration. All rights in the program are reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear Security Administration. The Government is granted for itself and others acting on its behalf a nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare derivative works, distribute copies to the public, perform publicly and display publicly, and to permit others to do so.
 
 License
 ========================================
@@ -213,5 +213,19 @@ How to Cite pyDNA-EPBD?
 ========================================
 .. code-block:: console
 
-      @MISC{
-      }
+@software{pyDNA_EPBD,
+  author       = {Kabir, Anowarul and 
+                  Bhattarai, Manish and
+                  Rasmussen, Kim and 
+                  Shehu, Amarda and 
+                  Usheva, Anny and 
+                  Bishop, Alan and 
+                  Alexandrov, Boian},
+  title        = {ppyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation},
+  month        = Aug,
+  year         = 2023,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.5758446},
+  url          = {https://doi.org/10.5281/zenodo.5758446}
+}
