@@ -1,9 +1,9 @@
 import os
 import math
 
-import configs.switches as switches
-from simulation.input_reader import read_input_data
-from simulation.simulation_steps import run_sequences
+import pydna_epbd.configs.switches as switches
+from pydna_epbd.simulation.input_reader import read_input_data
+from pydna_epbd.simulation.simulation_steps import run_sequences
 
 if __name__ == "__main__":
     """This runs the simulation."""
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         job_idx = int(os.environ["SLURM_ARRAY_TASK_ID"])
 
     # InputConfigs class object
-    input_configs = read_input_data("inputs/chicoma_configs.txt")
+    input_configs = read_input_data("examples/p5/chicoma_configs.txt")
 
     # dividing the input sequences to the nodes based on job-idx
     chunk_size = math.ceil(len(input_configs.sequences) / input_configs.n_nodes)

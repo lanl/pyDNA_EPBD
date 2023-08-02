@@ -1,9 +1,9 @@
 from math import log, exp
 from random import random, normalvariate
 
-from simulation.dna import DNA
-from monitors.all_monitors import Monitors
-from simulation.constants import ro, beta1_div_sqrt_two, one_div_sqrt2
+from pydna_epbd.simulation.dna import DNA
+from pydna_epbd.monitors.all_monitors import Monitors
+from pydna_epbd.simulation.constants import ro, beta1_div_sqrt_two, one_div_sqrt2
 
 
 class Simulation:

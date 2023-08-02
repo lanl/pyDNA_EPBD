@@ -1,12 +1,14 @@
 import os
 
-from monitors.bubble_monitor import BubbleMonitor
-from monitors.coord_monitor import CoordMonitor
-from monitors.energy_monitor import EnergyMonitor
-from monitors.flipping_monitor import FlippingMonitor
-from monitors.flipping_monitor_verbose import FlippingMonitorVerbose
-from monitors.melting_and_fraction_monitor import MeltingAndFractionMonitor
-from monitors.melting_and_fraction_many_monitor import MeltingAndFractionManyMonitor
+from pydna_epbd.monitors.bubble_monitor import BubbleMonitor
+from pydna_epbd.monitors.coord_monitor import CoordMonitor
+from pydna_epbd.monitors.energy_monitor import EnergyMonitor
+from pydna_epbd.monitors.flipping_monitor import FlippingMonitor
+from pydna_epbd.monitors.flipping_monitor_verbose import FlippingMonitorVerbose
+from pydna_epbd.monitors.melting_and_fraction_monitor import MeltingAndFractionMonitor
+from pydna_epbd.monitors.melting_and_fraction_many_monitor import (
+    MeltingAndFractionManyMonitor,
+)
 
 
 class Monitors:

@@ -1,4 +1,4 @@
-from monitors.flipping_monitor import Monitor
+from pydna_epbd.monitors.flipping_monitor import Monitor
 
 
 class FlippingMonitorVerbose(Monitor):

@@ -2,7 +2,7 @@ import os
 
 home_dir = ""
 
-from configs.input_configs import InputConfigs
+from pydna_epbd.configs.input_configs import InputConfigs
 
 
 def read_sequences_from_a_file(

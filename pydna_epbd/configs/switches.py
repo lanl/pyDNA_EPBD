@@ -1,3 +1,5 @@
+"""The switches activate the monitors to record the observations throughout the MCMC simulation.
+"""
 import os
 
 os.environ["BUBBLE_MONITOR"] = "True"

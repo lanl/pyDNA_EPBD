@@ -1,4 +1,4 @@
-from simulation.constants import *
+from pydna_epbd.simulation.constants import *
 
 
 class DNA:

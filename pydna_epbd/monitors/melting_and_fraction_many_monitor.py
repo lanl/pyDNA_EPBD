@@ -1,4 +1,4 @@
-from monitors.monitor import Monitor
+from pydna_epbd.monitors.monitor import Monitor
 
 
 class MeltingAndFractionManyMonitor(Monitor):

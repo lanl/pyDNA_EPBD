@@ -10,8 +10,6 @@
 
 
 class InputConfigs:
-    """Input configuration object to use throughout the simulation."""
-
     def __init__(
         self,
         temperature: float,
@@ -24,7 +22,7 @@ class InputConfigs:
         save_full=False,
         save_runtime=False,
     ) -> None:
-        """Initializes input configuration object.
+        """This initializes an input configuration object to use throughout the simulation process.
 
         Args:
             temperature (float): In Kelvin scale.

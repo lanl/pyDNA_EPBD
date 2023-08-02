@@ -1,5 +1,5 @@
 IsFirstColumnId         Yes # Yes/No
-SequencesDir            inputs/p5_seqs/
+SequencesDir            examples/p5/p5_seqs/
 OutputsDir              outputs/
 SaveFull                No  # Yes/No. if No, the simulation will save the summary, No is space efficient.
 SaveRuntime             No  # Yes/No. if No, it will not write the runtime.

@@ -1,14 +1,9 @@
-import sys
-
-sys.path.append("../pyDNA_EPBD")
-
 import os
 import math
-import time
-import switch
+import pydna_epbd.configs.switches as switches
+from pydna_epbd.simulation.input_reader import read_input_data
+from pydna_epbd.simulation.simulation_steps import run_sequences
 
-from input_reader import read_input_data
-from simulation.simulation_steps import run_sequences
 
 if __name__ == "__main__":
     job_idx = 0
@@ -26,6 +21,7 @@ if __name__ == "__main__":
         for x in range(0, len(input_configs.sequences), chunk_size)
     ]
     sequences = sequence_chunks[job_idx]
+
     print(f"job_idx:{job_idx}, n_seqs:{len(sequences)}")
 
     run_sequences(sequences, input_configs)

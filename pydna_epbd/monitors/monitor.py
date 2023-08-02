@@ -1,4 +1,4 @@
-from simulation.dna import DNA
+from pydna_epbd.simulation.dna import DNA
 
 
 class Monitor:

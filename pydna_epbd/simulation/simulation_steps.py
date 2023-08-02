@@ -1,6 +1,6 @@
-from simulation.dna import DNA
-from simulation.mc_simulation import Simulation
-from monitors.all_monitors import Monitors
+from pydna_epbd.simulation.dna import DNA
+from pydna_epbd.simulation.mc_simulation import Simulation
+from pydna_epbd.monitors.all_monitors import Monitors
 
 
 def run_single_iteration(
@@ -39,7 +39,9 @@ def run_single_iteration(
 
 
 import os, time
-from monitors.aggregate_outputs_and_write import aggregate_outputs_for_single_temp
+from pydna_epbd.monitors.aggregate_outputs_and_write import (
+    aggregate_outputs_for_single_temp,
+)
 from joblib import delayed, Parallel
 
 
