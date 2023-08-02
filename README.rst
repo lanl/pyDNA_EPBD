@@ -211,8 +211,8 @@ Authors
 
 How to Cite pyDNA-EPBD?
 ========================================
-.. code-block:: console
 
+```latex
 @software{pyDNA_EPBD,
   author       = {Kabir, Anowarul and 
                   Bhattarai, Manish and
@@ -229,3 +229,4 @@ How to Cite pyDNA-EPBD?
   doi          = {10.5281/zenodo.5758446},
   url          = {https://doi.org/10.5281/zenodo.5758446}
 }
+```
