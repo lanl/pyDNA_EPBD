@@ -16,7 +16,7 @@ with open("requirements.txt", "r") as f:
 setup(
     name="pydna_epbd",
     version=__version__,
-    author="Anowarul Kabir, Manish Bhattarai, Boian S. Alexandrov",
+    author="Anowarul Kabir, Manish Bhattarai, Kim Rasmussen, Amarda Shehu, Anny Usheva, Alan Bishop, Boian S. Alexandrov",
     author_email="akabir4@gmu.edu",
     description="pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation",
     long_description=LONG_DESCRIPTION,
