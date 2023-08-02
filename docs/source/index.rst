@@ -30,7 +30,7 @@ Resources
 
 Installation
 ========================================
-.. code-block:: shell
+.. code-block:: console
       
       git clone https://github.com/lanl/pyDNA_EPBD.git
       cd pyDNA_EPBD
@@ -63,6 +63,8 @@ To analyze:
 
 Example DNA sequences, Configurations and Switches
 ========================================================
+Input DNA sequences, simulation configurations and switches should be in place to run the MCMC simulation successfully. In the following, we give such examples:
+
 *examples/p5/p5_seqs/p5_wt_mt.txt*
 
 .. code-block:: console
@@ -155,22 +157,6 @@ Then *NNodes* variable in the confiuration file should be the total number of no
 
 Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
       
-How to Cite pyDNA-EPBD?
-========================================
-.. code-block:: console
-
-      @MISC{
-      }
-
-Authors
-========================================
-- `Anowarul Kabir <mailto:akabir4@gmu.edu>`_: Computer Sciece, George Mason University
-- `Manish Bhattarai <mailto:ceodspspectrum@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- `Kim Rasmussen <mailto:kor@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- `Amarda Shehu <mailto:ashehu@gmu.edu>`_: Computer Sciece, George Mason University
-- `Anny Usheva <mailto:Anny Usheva@brown.edu>`_: Surgery, Rhode Island Hospital and Brown University
-- `Alan Bishop <mailto:arb@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- `Boian S. Alexandrov <mailto:boian@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
 
 Acknowledgments
 ========================================
@@ -208,10 +194,10 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
+Documentation
+==================
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 4
 
    modules/modules
 
@@ -221,3 +207,22 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+
+Authors
+========================================
+- `Anowarul Kabir <mailto:akabir4@gmu.edu>`_: Computer Sciece, George Mason University
+- `Manish Bhattarai <mailto:ceodspspectrum@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+- `Kim Rasmussen <mailto:kor@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+- `Amarda Shehu <mailto:ashehu@gmu.edu>`_: Computer Sciece, George Mason University
+- `Anny Usheva <mailto:Anny Usheva@brown.edu>`_: Surgery, Rhode Island Hospital and Brown University
+- `Alan Bishop <mailto:arb@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+- `Boian S. Alexandrov <mailto:boian@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+
+How to Cite pyDNA-EPBD?
+========================================
+.. code-block:: console
+
+      @MISC{
+      }

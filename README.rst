@@ -2,6 +2,7 @@
    sphinx-quickstart on Mon Jul 31 12:21:40 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
+.. This file is copy of docs/source/index.rst, except the path of the figure and modules integration blocks.
 
 Welcome to pyDNA-EPBD's documentation!
 ======================================
@@ -9,10 +10,10 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
 
 |pic1|    |pic2|
 
-.. |pic1| image:: ../../plots/p5_wtmt_avg_coord.png
+.. |pic1| image:: plots/p5_wtmt_avg_coord.png
    :width: 45%
 
-.. |pic2| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
+.. |pic2| image:: plots/p5_wtmt_avg_flip_1.414213562373096.png
    :width: 45%
 
 **Background:** The dynamic behavior of DNA sequences, including local transient openings or *breathing* and *flipping*, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
@@ -30,7 +31,7 @@ Resources
 
 Installation
 ========================================
-.. code-block:: shell
+.. code-block:: console
       
       git clone https://github.com/lanl/pyDNA_EPBD.git
       cd pyDNA_EPBD
@@ -63,6 +64,8 @@ To analyze:
 
 Example DNA sequences, Configurations and Switches
 ========================================================
+Input DNA sequences, simulation configurations and switches should be in place to run the MCMC simulation successfully. In the following, we give such examples:
+
 *examples/p5/p5_seqs/p5_wt_mt.txt*
 
 .. code-block:: console
@@ -102,7 +105,7 @@ Example DNA sequences, Configurations and Switches
 
 Example Usage
 ========================================
-**Option 1: Using single computing node:** 
+**Option 1: Using single computing node.** 
 *python examples/p5/run.py*
 
 .. code-block:: python
@@ -141,7 +144,7 @@ The above program will generate outputs in the *outputs* directory.
 
 **Option 2: Using multiple computing nodes (slurm):**
 By default, the above example script uses single node, which is slow for a large number of sequences. To avail multiple nodes, we suggest to define variables as follows:
-First, a slurm script should define a *--array* variable.
+First, a slurm script should define a `*--array*` variable.
 
 .. code-block:: console
 
@@ -155,22 +158,6 @@ Then *NNodes* variable in the confiuration file should be the total number of no
 
 Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
       
-How to Cite pyDNA-EPBD?
-========================================
-.. code-block:: console
-
-      @MISC{
-      }
-
-Authors
-========================================
-- `Anowarul Kabir <mailto:akabir4@gmu.edu>`_: Computer Sciece, George Mason University
-- `Manish Bhattarai <mailto:ceodspspectrum@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- `Kim Rasmussen <mailto:kor@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- `Amarda Shehu <mailto:ashehu@gmu.edu>`_: Computer Sciece, George Mason University
-- `Anny Usheva <mailto:Anny Usheva@brown.edu>`_: Surgery, Rhode Island Hospital and Brown University
-- `Alan Bishop <mailto:arb@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- `Boian S. Alexandrov <mailto:boian@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
 
 Acknowledgments
 ========================================
@@ -209,15 +196,21 @@ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
-   modules/modules
+Authors
+========================================
+- `Anowarul Kabir <mailto:akabir4@gmu.edu>`_: Computer Sciece, George Mason University
+- `Manish Bhattarai <mailto:ceodspspectrum@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+- `Kim Rasmussen <mailto:kor@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+- `Amarda Shehu <mailto:ashehu@gmu.edu>`_: Computer Sciece, George Mason University
+- `Anny Usheva <mailto:Anny Usheva@brown.edu>`_: Surgery, Rhode Island Hospital and Brown University
+- `Alan Bishop <mailto:arb@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
+- `Boian S. Alexandrov <mailto:boian@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+How to Cite pyDNA-EPBD?
+========================================
+.. code-block:: console
+
+      @MISC{
+      }

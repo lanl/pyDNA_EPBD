@@ -32,7 +32,7 @@ extensions = [
 
 autoclass_content = "both"
 templates_path = ["_templates"]
-exclude_patterns = []
+exclude_patterns = ["version.py"]
 
 
 # -- Options for HTML output -------------------------------------------------
