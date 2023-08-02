@@ -12,10 +12,10 @@ configs.input\_configs module
    :undoc-members:
    :show-inheritance:
 
-configs.switchs module
-----------------------
+configs.switches module
+-----------------------
 
-.. automodule:: configs.switchs
+.. automodule:: configs.switches
    :members:
    :undoc-members:
    :show-inheritance:

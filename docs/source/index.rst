@@ -35,15 +35,7 @@ Installation
       cd pyDNA_EPBD
       conda create -c conda-forge --name pydnaepbd_pypy39_conda pypy python=3.9 -y
       conda activate pydnaepbd_pypy39_conda
-      python setup.py install
-
-
-      # Test to see if installation is successfull
-      Type python in the shell
-      >>>> from pydna_epbd.version import *
-      >>>> version
-      '1.0.0'
-
+      pip install -r requirements.txt
       
       # To remove the conda venv
       conda deactivate
@@ -51,14 +43,27 @@ Installation
 
 Prerequisites
 ========================================
+To run the simulation:
+   * joblib>=1.3.0
+   * numpy>=1.25.1
 
+To analyze:
+   * scikit-learn>=1.3.0
+   * scipy>=1.11.1
+   * pandas>=2.0.3
+   * matplotlib>=3.7.2
+   * seaborn>=0.12.2
 
 Example DNA sequences, Configurations and Switches
 ========================================================
+*inputs/p5_seqs/p5_wt_mt.txt*
+
 .. code-block:: console
 
       P5_wt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCATTTTGACCGCGAAATTTGAACGGCGC
       P5_mt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCGCTTTGACCGCGAAATTTGAACGGCGC
+
+*inputs/chicoma_configs.txt*
 
 .. code-block:: console
       
@@ -74,6 +79,8 @@ Example DNA sequences, Configurations and Switches
       StepsAfterPreheating    80000
       NNodes                  1 # Number of nodes to divide the sequences equally (--array in slurm script).
 
+*pydna_epbd/configs/switches.py*
+
 .. code-block:: python
       
       import os
@@ -88,6 +95,8 @@ Example DNA sequences, Configurations and Switches
 
 Example Usage
 ========================================
+*python pydna_epbd/run.py*
+
 .. code-block:: python
       
       import os

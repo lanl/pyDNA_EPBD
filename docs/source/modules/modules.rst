@@ -8,4 +8,3 @@ pydna_epbd
    monitors
    run
    simulation
-   version

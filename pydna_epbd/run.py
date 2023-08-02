@@ -1,7 +1,7 @@
 import os
 import math
 
-import configs.switchs as switchs
+import configs.switches as switches
 from simulation.input_reader import read_input_data
 from simulation.simulation_steps import run_sequences
 
