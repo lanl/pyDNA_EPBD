@@ -40,8 +40,8 @@ Installation
 
       # Test to see if installation is successfull
       Type python in the shell
-      >>>> from pydna_epbd.version import *
-      >>>> version
+      >>>> import pydna_epbd.version as v
+      >>>> v.__version__
       '1.0.0'
       
       # To remove the conda venv
@@ -63,14 +63,14 @@ To analyze:
 
 Example DNA sequences, Configurations and Switches
 ========================================================
-*inputs/p5_seqs/p5_wt_mt.txt*
+*examples/p5/p5_seqs/p5_wt_mt.txt*
 
 .. code-block:: console
 
       P5_wt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCATTTTGACCGCGAAATTTGAACGGCGC
       P5_mt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCGCTTTGACCGCGAAATTTGAACGGCGC
 
-*inputs/chicoma_configs.txt*
+*examples/p5/chicoma_configs.txt*
 
 .. code-block:: console
       
@@ -102,7 +102,8 @@ Example DNA sequences, Configurations and Switches
 
 Example Usage
 ========================================
-*python pydna_epbd/run.py*
+**Option 1: Using single computing node:** 
+*python examples/p5/run.py*
 
 .. code-block:: python
       
@@ -115,7 +116,7 @@ Example Usage
       from simulation.simulation_steps import run_sequences
 
       if __name__ == "__main__":
-         """This runs the simulation."""
+         """This runs the simulation given a configuration file."""
          job_idx = 0
 
          # array job
@@ -138,6 +139,22 @@ Example Usage
 
 The above program will generate outputs in the *outputs* directory.
 
+**Option 2: Using multiple computing nodes (slurm):**
+By default, the above example script uses single node, which is slow for a large number of sequences. To avail multiple nodes, we suggest to define variables as follows:
+First, a slurm script should define a *--array* variable.
+
+.. code-block:: console
+
+      #SBATCH --array=0-5 # i.e If six nodes are avilable
+
+Then *NNodes* variable in the confiuration file should be the total number of nodes to use. For the above case: 
+
+.. code-block:: console
+
+      NNodes                  6
+
+Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
+      
 How to Cite pyDNA-EPBD?
 ========================================
 .. code-block:: console
@@ -161,17 +178,6 @@ Acknowledgments
 
 Copyright Notice
 ========================================
-© 2021. Triad National Security, LLC. All rights reserved.
-This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
-National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
-Department of Energy/National Nuclear Security Administration. All rights in the program are
-reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear
-Security Administration. The Government is granted for itself and others acting on its behalf a
-nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare
-derivative works, distribute copies to the public, perform publicly and display publicly, and to permit
-others to do so.
-
-**LANL C Number: C21028**
 
 
 License

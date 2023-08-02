@@ -1,6 +1,8 @@
 import sys
+import os
 
-sys.path.append("../../pyDNA_EPBD/pydna_epbd")
+sys.path.append(os.path.abspath(os.path.join("../../")))
+from pydna_epbd.version import __version__
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -13,7 +15,7 @@ sys.path.append("../../pyDNA_EPBD/pydna_epbd")
 project = "pyDNA-EPBD"
 copyright = "2023, LANL"
 author = "Anowarul Kabir, Manish Bhattarai, Kim Rasmussen, Amarda Shehu, Anny Usheva, Alan Bishop and Boian Alexandrov"
-release = "1.0.0"
+release = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
