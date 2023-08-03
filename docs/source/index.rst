@@ -16,7 +16,7 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
 |pic7|
 |pic8|
 
-.. |pic1| image:: ../../plots/mcmc_algorithm.pdf
+.. |pic1| image:: ../../plots/mcmc_algorithm.png
    :width: 45%
 
 .. |pic2| image:: ../../plots/p5_wtmt_avg_coord.png
@@ -25,7 +25,7 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
 .. |pic3| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
    :width: 45%
 
-.. |pic4| image:: ../../plots/Bubbles__.pdf
+.. |pic4| image:: ../../plots/Bubbles.png
    :width: 45%
 
 .. |pic5| image:: ../../plots/P5_flips.png
