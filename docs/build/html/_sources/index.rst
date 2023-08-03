@@ -7,12 +7,37 @@ Welcome to pyDNA-EPBD's documentation!
 ======================================
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
 
-|pic1|    |pic2|
+|pic1|    
+|pic2|
+|pic3|
+|pic4|
+|pic5|
+|pic6|
+|pic7|
+|pic8|
 
-.. |pic1| image:: ../../plots/p5_wtmt_avg_coord.png
+.. |pic1| image:: ../../plots/mcmc_algorithm.pdf
+
+
+.. |pic2| image:: ../../plots/p5_wtmt_avg_coord.png
    :width: 45%
 
-.. |pic2| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
+.. |pic3| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
+   :width: 45%
+
+.. |pic4| image:: ../../plots/Bubbles__.pdf
+   :width: 45%
+
+.. |pic5| image:: ../../plots/P5_flips.png
+   :width: 45%
+
+.. |pic6| image:: ../../plots/P5_qfactors.png
+   :width: 45%
+
+.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
+   :width: 45%
+
+.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
    :width: 45%
 
 **Background:** The dynamic behavior of DNA sequences, including local transient openings or *breathing* and *flipping*, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
