@@ -37,7 +37,7 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
 
 |pic1|
 
-Figure 1:Overview of the EPBD implementation[]
+Figure 1:Overview of the EPBD implementation.
 
 
 
@@ -171,7 +171,7 @@ The above program will generate outputs in the *outputs* directory.
 
 |pic2| |pic3|
 
-Figure 2: Overview of flipping profile for p5 wild type and mutant type []
+Figure 2: Overview of flipping profile for p5 wild type and mutant type.
 
 **Option 2: Using multiple computing nodes (slurm):**
 By default, the above example script uses single node, which is slow for a large number of sequences. To avail multiple nodes, we suggest to define variables as follows:
@@ -191,22 +191,22 @@ Now all the input DNA sequences will be divided into Six chunks to run independe
       
 |pic4|
 
-Figure 3: Overview of Bubble Tensor  for p5 wild type and mutant type for different thresholds[].
+Figure 3: Overview of Bubble Tensor  for p5 wild type and mutant type for different thresholds.
 
 
 |pic5|
 
 |pic6|
 
-Figure 4: Q factor analysis [].
+Figure 4: Q factor analysis.
 
 |pic7|
 
-Figure 5: Utility of breating characeristics on TF binding specificity for selex data [].
+Figure 5: Utility of breating characeristics on TF binding specificity for selex data.
 
 |pic8|
 
-Figure 6: Scalability analysis [].
+Figure 6: Scalability analysis.
 
 Acknowledgments
 ========================================
