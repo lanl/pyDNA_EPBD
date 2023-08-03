@@ -8,23 +8,15 @@ Welcome to pyDNA-EPBD's documentation!
 ======================================
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
 
-|pic1|    
-|pic2|
-|pic3|
-|pic4|
-|pic5|
-|pic6|
-|pic7|
-|pic8|
 
 .. |pic1| image:: plots/mcmc_algorithm.png
    :width: 45%
 
 .. |pic2| image:: plots/p5_wtmt_avg_coord.png
-   :width: 45%
+   :width: 33%
 
 .. |pic3| image:: plots/p5_wtmt_avg_flip_1.414213562373096.png
-   :width: 45%
+   :width: 33%
 
 .. |pic4| image:: plots/Bubbles.png
    :width: 45%
@@ -40,6 +32,15 @@ This repository corresponds to the article titled as **pyDNA-EPBD: A Python-base
 
 .. |pic8| image:: plots/88seqs_seqlen_vs_runtime.png
    :width: 45%
+
+
+
+|pic1|
+
+Figure 1:Overview of the EPBD implementation[]
+
+
+
 
 **Background:** The dynamic behavior of DNA sequences, including local transient openings or *breathing* and *flipping*, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
 
@@ -168,6 +169,10 @@ Example Usage
 
 The above program will generate outputs in the *outputs* directory.
 
+|pic2| |pic3|
+
+Figure 2: Overview of flipping profile for p5 wild type and mutant type []
+
 **Option 2: Using multiple computing nodes (slurm):**
 By default, the above example script uses single node, which is slow for a large number of sequences. To avail multiple nodes, we suggest to define variables as follows:
 First, a slurm script should define a `*--array*` variable.
@@ -184,6 +189,24 @@ Then *NNodes* variable in the confiuration file should be the total number of no
 
 Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
       
+|pic4|
+
+Figure 3: Overview of Bubble Tensor  for p5 wild type and mutant type for different thresholds[].
+
+
+|pic5|
+
+|pic6|
+
+Figure 4: Q factor analysis [].
+
+|pic7|
+
+Figure 5: Utility of breating characeristics on TF binding specificity for selex data [].
+
+|pic8|
+
+Figure 6: Scalability analysis [].
 
 Acknowledgments
 ========================================
