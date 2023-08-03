@@ -39,7 +39,7 @@ def run_single_iteration(
 
 
 import os, time
-from pydna_epbd.monitors.aggregate_outputs_and_write import (
+from pydna_epbd.simulation.aggregate_outputs_and_write import (
     aggregate_outputs_for_single_temp,
 )
 from joblib import delayed, Parallel

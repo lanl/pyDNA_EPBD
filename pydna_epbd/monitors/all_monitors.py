@@ -26,33 +26,33 @@ class Monitors:
         total_steps = n_preheating_steps, n_steps_after_preheating
         self.monitors = []
 
-        if os.environ["BUBBLE_MONITOR"] == "True":
+        if os.environ["BUBBLE_MONITOR"] == "On":
             self.bubble_monitor = BubbleMonitor(dna)
             self.monitors.append(self.bubble_monitor)
 
-        if os.environ["COORD_MONITOR"] == "True":
+        if os.environ["COORD_MONITOR"] == "On":
             self.coord_monitor = CoordMonitor(dna)
             self.monitors.append(self.coord_monitor)
 
-        if os.environ["FLIPPING_MONITOR"] == "True":
+        if os.environ["FLIPPING_MONITOR"] == "On":
             self.flipping_monitor = FlippingMonitor(dna)
             self.monitors.append(self.flipping_monitor)
 
-        if os.environ["FLIPPING_MONITOR_VERBOSE"] == "True":
+        if os.environ["FLIPPING_MONITOR_VERBOSE"] == "On":
             self.flipping_monitor_verbose = FlippingMonitorVerbose(dna)
             self.monitors.append(self.flipping_monitor_verbose)
 
-        if os.environ["ENERGY_MONITOR"] == "True":
+        if os.environ["ENERGY_MONITOR"] == "On":
             self.energy_monitor = EnergyMonitor(dna, total_steps)
             self.monitors.append(self.energy_monitor)
 
-        if os.environ["MELTING_AND_FRACTION_MONITOR"] == "True":
+        if os.environ["MELTING_AND_FRACTION_MONITOR"] == "On":
             self.melting_and_fraction_monitor = MeltingAndFractionMonitor(
                 dna, n_steps_after_preheating
             )
             self.monitors.append(self.melting_and_fraction_monitor)
 
-        if os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] == "True":
+        if os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] == "On":
             self.melting_and_fraction_many_monitor = MeltingAndFractionManyMonitor(
                 dna, n_preheating_steps
             )

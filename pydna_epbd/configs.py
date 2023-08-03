@@ -1,14 +1,3 @@
-# from dataclasses import dataclass
-# @dataclass(frozen=True)
-# class InputLimits:  # immutable, not using decorator which makes codes slower
-#     MAX_SEEDS = 4000
-#     MAX_SEQUENCES = 25000
-#     MAX_TEMPERATURES = 150
-
-#     MAX_BASES = 20000
-#     MAX_STRING_LENGTH = 256
-
-
 class InputConfigs:
     def __init__(
         self,
@@ -57,7 +46,19 @@ class InputConfigs:
 
     def __str__(self) -> str:
         return (
+            f"The configs are: \n"
             f"\t#-Iterations: {self.n_iterations}\n\t#-PreheatingSteps: {self.n_preheating_steps}\n\t#-PostPreheatingSteps: {self.n_steps_after_preheating}\n\t"
             f"#-TotalSteps: {self.total_steps}\n\t#-Sequences: {self.n_sequences}\n\tTemperature: {self.temperature}K\n\t"
             f"#-Nodes: {self.n_nodes}\n\tOutputsDir: {self.outputs_dir}\n\tIsSavingFull: {self.save_full}\n\tIsSavingRuntime: {self.save_runtime}"
         )
+
+
+# from dataclasses import dataclass
+# @dataclass(frozen=True)
+# class InputLimits:  # immutable, not using decorator which makes codes slower
+#     MAX_SEEDS = 4000
+#     MAX_SEQUENCES = 25000
+#     MAX_TEMPERATURES = 150
+
+#     MAX_BASES = 20000
+#     MAX_STRING_LENGTH = 256

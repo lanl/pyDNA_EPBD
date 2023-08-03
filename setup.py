@@ -27,11 +27,6 @@ setup(
     setup_requires=[
         "numpy",
         "joblib",
-        "matplotlib",
-        "pandas",
-        "scikit-learn",
-        "scipy",
-        "seaborn",
     ],
     url="https://github.com/lanl/pyDNA_EPBD",
     packages=find_packages(),
