@@ -3,13 +3,32 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+
+.. |pic2| image:: ../../plots/Bubbles.png
+   :width: 45%
+
+.. |pic5| image:: ../../plots/P5_flips.png
+   :width: 45%
+
+.. |pic6| image:: ../../plots/P5_qfactors.png
+   :width: 45%
+
+.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
+   :width: 45%
+
+.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
+   :width: 45%    
+
 Welcome to pyDNA-EPBD's documentation!
 ======================================
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
 
-.. image:: ../../plots/mcmc_algorithm.png
-   :width: 50%
-   :align: center
+
+.. figure:: ../../plots/mcmc_algorithm.png
+    :width: 50%
+    :align: center
+    
+    Figure 1: Overview of the pyDNA-EPBD implementation.
 
 The dynamic behavior of DNA sequences, including local transient openings or *breathing* and *flipping*, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
 To address this, we have developed **pyDNA-EPBD**, a Python-based software tool that employs an extended version of the Peyrard–Bishop–Dauxois (EPBD) model. This extension integrates a sequence-dependent stacking term, enabling a more precise description of the DNA melting behavior for homogenous and periodic sequences. Through the use of a Monte Carlo Markov Chain (MCMC) approach, pyDNA-EPBD simulates DNA dynamics and generates data on DNA breathing characteristics such as bubble coordinates and flipping.
@@ -33,10 +52,11 @@ Installation
       conda activate pydnaepbd_pypy39_conda
       python setup.py install
 
-      # Test to see if installation is successfull, run the following command. This will show that P5 BDs are already computed in the "outputs" directory
+      # Run your first pyDNA-EPBD simulation. 
+      # This will generate P5 wild and mutant sequence breathing dynamics in the "outputs" directory.
       python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
 
-      # The other libraries to analyze the DNA breathing dynamics (BD) can be installed using the following command:
+      # The other libraries to analyze the DNA breathing dynamics can be installed using the following command:
       conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn -y
       # The above libraries can be dependent on the following system environments.  
       sudo apt install libopenblas-dev  pkg-config libopenblas64-dev pypy-dev
@@ -59,132 +79,146 @@ To analyze the DNA breathing dynamics (BD):
    * matplotlib>=3.7.2
    * seaborn>=0.12.2
 
-Example DNA sequences, Configurations and Switches
-========================================================
-Input DNA sequences, simulation configurations and switches should be in place to run the MCMC simulation successfully. In the following, we give such examples:
 
-*examples/p5/p5_seqs/p5_wt_mt.txt*
+Configuration file structure
+========================================================
+The simulation requires a configuration filepath. The structure of a configuration file is follows:
+
+.. list-table:: Configuration file structure
+   :widths: 20 10 70
+   :header-rows: 1
+
+   * - Keys
+     - Options
+     - Comments
+   * - IsFirstColumnId
+     - Yes/No
+     - Whether or not the first column in the sequence file indicates sequence id.
+   * - SaveFull
+     - Yes/No
+     - Whether or not save full simulation outputs. `No` is space efficient.
+   * - SaveRuntime
+     - Yes/No
+     - Whether or not save runtime for each DNA sequence.
+   * - SequencesDir
+     - examples/p5/p5_seqs/
+     - Directory that contains sequence file(s).
+   * - OutputsDir
+     - outputs/
+     - Directory where pyDNA-EPBD saves outputs.
+   * - Flanks
+     - None
+     - The flanks ('GC' like sequence) will be prepend and append with all input DNA sequences. 'None' will not add any.
+   * - Temperature
+     - 310
+     - The simulation temperature in Kelvin scale.
+   * - PreheatingSteps 
+     - 50000
+     - The number of preheating steps.
+   * - PostPreheatingSteps
+     - 80000
+     - The number of post-preheating steps. Usually, the monitors record observations during the post-preheating steps.
+   * - ComputingNodes
+     - 1
+     - Number of computing nodes available to run the simulation. This parameter is only be used while running the simulation with SLURM script.
+   * - BubbleMonitor
+     - On/Off
+     - Whether or not record DNA bubble information.
+   * - CoordinateMonitor
+     - On/Off
+     - Whether or not record coordinate information.
+   * - FlippingMonitorVerbose
+     - On/Off
+     - Whether or not record flipping information for five different thresholds.
+   * - FlippingMonitor
+     - On/Off
+     - Whether or not record flipping information for one threshold.
+   * - EnergyMonitor
+     - On/Off
+     - Whether or not record energy information.
+   * - MeltingAndFractionMonitor
+     - On/Off
+     - Whether or not record melting and fraction information for one threshold.
+   * - MeltingAndFractionManyMonitor
+     - On/Off
+     - Whether or not record melting and fraction information for 20 thresholds at evenly separated 100 time steps.
+
+
+Example Configurations and P5 DNA sequences
+==============================================
+The `example simulation run <https://github.com/lanl/pyDNA_EPBD#installation>`_ uses the following configuration file (`examples/p5/configs.txt <https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/configs.txt>`_):
+
+.. code-block:: console
+
+      IsFirstColumnId = Yes
+      SaveFull = No
+      SaveRuntime = No
+      SequencesDir = examples/p5/p5_seqs/
+      OutputsDir = outputs/
+      Flanks = None
+      Temperature = 310
+      Iterations = 100
+      PreheatingSteps = 50000
+      PostPreheatingSteps = 80000
+      ComputingNodes = 1
+      BubbleMonitor = On
+      CoordinateMonitor = On
+      FlippingMonitorVerbose = On
+      FlippingMonitor = Off
+      EnergyMonitor = Off
+      MeltingAndFractionMonitor = Off
+      MeltingAndFractionManyMonitor = Off
+
+The input P5 DNA sequences (`examples/p5/p5_seqs/p5_wt_mt.txt <https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/p5_seqs/p5_wt_mt.txt>`_) are:
 
 .. code-block:: console
 
       P5_wt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCATTTTGACCGCGAAATTTGAACGGCGC
       P5_mt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCGCTTTGACCGCGAAATTTGAACGGCGC
 
-*examples/p5/chicoma_configs.txt*
-
-.. code-block:: console
-      
-      IsFirstColumnId         Yes # Yes/No
-      SequencesDir            inputs/p5_seqs/
-      OutputsDir              outputs/
-      SaveFull                No  # Yes/No. if No, the simulation will save the summary, No is space efficient.
-      SaveRuntime             No  # Yes/No. if No, it will not write the runtime.
-      Flanks                  None # flanks will be added to all the seq on both sides, 26 GCs, None will not add anything
-      Temperature             310
-      Iterations              100
-      Preheating              50000
-      StepsAfterPreheating    80000
-      NNodes                  1 # Number of nodes to divide the sequences equally (--array in slurm script).
-
-*pydna_epbd/configs/switches.py*
-
-.. code-block:: python
-      
-      import os
-      os.environ['BUBBLE_MONITOR'] = "True"
-      os.environ['ENERGY_MONITOR'] = 'False'
-      os.environ['COORD_MONITOR'] = "True"
-      os.environ['FLIPPING_MONITOR'] = "False"
-      os.environ['FLIPPING_MONITOR_VERBOSE'] = "True"
-      os.environ['MELTING_AND_FRACTION_MONITOR'] = "False"
-      os.environ['MELTING_AND_FRACTION_MANY_MONITOR'] = "False"
-
 
 Example Usage
 ========================================
-**Option 1: Using single computing node:** 
-*python examples/p5/run.py*
+**Option 1: Using single computing node:**
 
-.. code-block:: python
+.. code-block:: console
       
-      import os
-      import math
-      import time
-      import switch
+      python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
 
-      from input_reader import read_input_data
-      from simulation.simulation_steps import run_sequences
-
-      if __name__ == "__main__":
-         """This runs the simulation given a configuration file."""
-         job_idx = 0
-
-         # array job
-         if "SLURM_ARRAY_TASK_ID" in os.environ:
-            job_idx = int(os.environ["SLURM_ARRAY_TASK_ID"])
-
-         # InputConfigs class object
-         input_configs = read_input_data("inputs/chicoma_configs.txt")
-
-         # dividing the input sequences to the nodes based on job-idx
-         chunk_size = math.ceil(len(input_configs.sequences) / input_configs.n_nodes)
-         sequence_chunks = [
-            input_configs.sequences[x : x + chunk_size]
-            for x in range(0, len(input_configs.sequences), chunk_size)
-         ]
-         sequences = sequence_chunks[job_idx]
-         print(f"job_idx:{job_idx}, n_seqs:{len(sequences)}")
-
-         run_sequences(sequences, input_configs)
-
-The above program will generate outputs in the *outputs* directory.
-
-**Option 2: Using multiple computing nodes (slurm):**
-By default, the above example script uses single node, which is slow for a large number of sequences. To avail multiple nodes, we suggest to define variables as follows:
-First, a slurm script should define a *--array* variable.
+**Option 2: Using multiple computing nodes (SLURM):**
+To avail multiple nodes, we suggest to define *--array* variable in a SLURM script:
 
 .. code-block:: console
 
       #SBATCH --array=0-5 # i.e If six nodes are avilable
 
-Then *NNodes* variable in the confiuration file should be the total number of nodes to use. For the above case: 
+Then, *ComputingNodes* variable in the confiuration file should be the total number of nodes to use. For the above case: 
 
 .. code-block:: console
 
-      NNodes                  6
+      ComputingNodes = 6
 
 Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
-      
+
+Example SLURM script is given `here <https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/chicoma_job.sh>`_ for P5.
+Both options will generate outputs in the *outputs* directory.
+
+.. |a| image:: ../../plots/p5_wtmt_avg_coord.png
+.. |b| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
+
+.. list-table:: 
+   :widths: 50 50
+   :header-rows: 1
+
+   * - Figure 2: Average coordinates.
+     - Figure 3: Average flipping.
+   * - |a|
+     - |b|
+
 Results
 ==================
-|pic2|
-|pic3|
-|pic4|
-|pic5|
-|pic6|
-|pic7|
-|pic8|
 
-.. |pic2| image:: ../../plots/Bubbles.png
-   :width: 45%
-
-.. |pic3| image:: ../../plots/p5_wtmt_avg_coord.png
-   :width: 45%
-
-.. |pic4| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
-   :width: 45%
-
-.. |pic5| image:: ../../plots/P5_flips.png
-   :width: 45%
-
-.. |pic6| image:: ../../plots/P5_qfactors.png
-   :width: 45%
-
-.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
-   :width: 45%
-
-.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
-   :width: 45%      
+  
 
 Acknowledgments
 ========================================

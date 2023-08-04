@@ -280,7 +280,8 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-dna-sequences-configurations-and-switches">Example DNA sequences, Configurations and Switches</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file-structure">Configuration file structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-configurations-and-p5-dna-sequences">Example Configurations and P5 DNA sequences</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
@@ -305,7 +306,12 @@ document.write(`
   <section id="welcome-to-pydna-epbd-s-documentation">
 <h1>Welcome to pyDNA-EPBD’s documentation!<a class="headerlink" href="#welcome-to-pydna-epbd-s-documentation" title="Permalink to this heading">#</a></h1>
 <p>This repository corresponds to the article titled as <strong>pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation</strong>.</p>
-<a class="reference internal image-reference" href="_images/mcmc_algorithm.png"><img alt="_images/mcmc_algorithm.png" class="align-center" src="_images/mcmc_algorithm.png" style="width: 50%;" /></a>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/mcmc_algorithm.png"><img alt="_images/mcmc_algorithm.png" src="_images/mcmc_algorithm.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 1: Overview of the pyDNA-EPBD implementation.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 <p>The dynamic behavior of DNA sequences, including local transient openings or <em>breathing</em> and <em>flipping</em>, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
 To address this, we have developed <strong>pyDNA-EPBD</strong>, a Python-based software tool that employs an extended version of the Peyrard–Bishop–Dauxois (EPBD) model. This extension integrates a sequence-dependent stacking term, enabling a more precise description of the DNA melting behavior for homogenous and periodic sequences. Through the use of a Monte Carlo Markov Chain (MCMC) approach, pyDNA-EPBD simulates DNA dynamics and generates data on DNA breathing characteristics such as bubble coordinates and flipping.</p>
 </section>
@@ -327,10 +333,11 @@ conda<span class="w"> </span>create<span class="w"> </span>-c<span class="w"> </
 conda<span class="w"> </span>activate<span class="w"> </span>pydnaepbd_pypy39_conda
 python<span class="w"> </span>setup.py<span class="w"> </span>install
 
-<span class="c1"># Test to see if installation is successfull, run the following command. This will show that P5 BDs are already computed in the &quot;outputs&quot; directory</span>
+<span class="c1"># Run your first pyDNA-EPBD simulation.</span>
+<span class="c1"># This will generate P5 wild and mutant sequence breathing dynamics in the &quot;outputs&quot; directory.</span>
 python<span class="w"> </span>pydna_epbd/run.py<span class="w"> </span>--config_filepath<span class="w"> </span>examples/p5/configs.txt
 
-<span class="c1"># The other libraries to analyze the DNA breathing dynamics (BD) can be installed using the following command:</span>
+<span class="c1"># The other libraries to analyze the DNA breathing dynamics can be installed using the following command:</span>
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>scikit-learn<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>-y
 <span class="c1"># The above libraries can be dependent on the following system environments.</span>
 sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libopenblas-dev<span class="w">  </span>pkg-config<span class="w"> </span>libopenblas64-dev<span class="w"> </span>pypy-dev
@@ -360,97 +367,160 @@ conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"
 </dd>
 </dl>
 </section>
-<section id="example-dna-sequences-configurations-and-switches">
-<h1>Example DNA sequences, Configurations and Switches<a class="headerlink" href="#example-dna-sequences-configurations-and-switches" title="Permalink to this heading">#</a></h1>
-<p>Input DNA sequences, simulation configurations and switches should be in place to run the MCMC simulation successfully. In the following, we give such examples:</p>
-<p><em>examples/p5/p5_seqs/p5_wt_mt.txt</em></p>
+<section id="configuration-file-structure">
+<h1>Configuration file structure<a class="headerlink" href="#configuration-file-structure" title="Permalink to this heading">#</a></h1>
+<p>The simulation requires a configuration filepath. The structure of a configuration file is follows:</p>
+<table class="table" id="id2">
+<caption><span class="caption-text">Configuration file structure</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Keys</p></th>
+<th class="head"><p>Options</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IsFirstColumnId</p></td>
+<td><p>Yes/No</p></td>
+<td><p>Whether or not the first column in the sequence file indicates sequence id.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SaveFull</p></td>
+<td><p>Yes/No</p></td>
+<td><p>Whether or not save full simulation outputs. <cite>No</cite> is space efficient.</p></td>
+</tr>
+<tr class="row-even"><td><p>SaveRuntime</p></td>
+<td><p>Yes/No</p></td>
+<td><p>Whether or not save runtime for each DNA sequence.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SequencesDir</p></td>
+<td><p>examples/p5/p5_seqs/</p></td>
+<td><p>Directory that contains sequence file(s).</p></td>
+</tr>
+<tr class="row-even"><td><p>OutputsDir</p></td>
+<td><p>outputs/</p></td>
+<td><p>Directory where pyDNA-EPBD saves outputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Flanks</p></td>
+<td><p>None</p></td>
+<td><p>The flanks (‘GC’ like sequence) will be prepend and append with all input DNA sequences. ‘None’ will not add any.</p></td>
+</tr>
+<tr class="row-even"><td><p>Temperature</p></td>
+<td><p>310</p></td>
+<td><p>The simulation temperature in Kelvin scale.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PreheatingSteps</p></td>
+<td><p>50000</p></td>
+<td><p>The number of preheating steps.</p></td>
+</tr>
+<tr class="row-even"><td><p>PostPreheatingSteps</p></td>
+<td><p>80000</p></td>
+<td><p>The number of post-preheating steps. Usually, the monitors record observations during the post-preheating steps.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ComputingNodes</p></td>
+<td><p>1</p></td>
+<td><p>Number of computing nodes available to run the simulation. This parameter is only be used while running the simulation with SLURM script.</p></td>
+</tr>
+<tr class="row-even"><td><p>BubbleMonitor</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record DNA bubble information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>CoordinateMonitor</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record coordinate information.</p></td>
+</tr>
+<tr class="row-even"><td><p>FlippingMonitorVerbose</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record flipping information for five different thresholds.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FlippingMonitor</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record flipping information for one threshold.</p></td>
+</tr>
+<tr class="row-even"><td><p>EnergyMonitor</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record energy information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>MeltingAndFractionMonitor</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record melting and fraction information for one threshold.</p></td>
+</tr>
+<tr class="row-even"><td><p>MeltingAndFractionManyMonitor</p></td>
+<td><p>On/Off</p></td>
+<td><p>Whether or not record melting and fraction information for 20 thresholds at evenly separated 100 time steps.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-configurations-and-p5-dna-sequences">
+<h1>Example Configurations and P5 DNA sequences<a class="headerlink" href="#example-configurations-and-p5-dna-sequences" title="Permalink to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://github.com/lanl/pyDNA_EPBD#installation">example simulation run</a> uses the following configuration file (<a class="reference external" href="https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/configs.txt">examples/p5/configs.txt</a>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">IsFirstColumnId = Yes</span>
+<span class="go">SaveFull = No</span>
+<span class="go">SaveRuntime = No</span>
+<span class="go">SequencesDir = examples/p5/p5_seqs/</span>
+<span class="go">OutputsDir = outputs/</span>
+<span class="go">Flanks = None</span>
+<span class="go">Temperature = 310</span>
+<span class="go">Iterations = 100</span>
+<span class="go">PreheatingSteps = 50000</span>
+<span class="go">PostPreheatingSteps = 80000</span>
+<span class="go">ComputingNodes = 1</span>
+<span class="go">BubbleMonitor = On</span>
+<span class="go">CoordinateMonitor = On</span>
+<span class="go">FlippingMonitorVerbose = On</span>
+<span class="go">FlippingMonitor = Off</span>
+<span class="go">EnergyMonitor = Off</span>
+<span class="go">MeltingAndFractionMonitor = Off</span>
+<span class="go">MeltingAndFractionManyMonitor = Off</span>
+</pre></div>
+</div>
+<p>The input P5 DNA sequences (<a class="reference external" href="https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/p5_seqs/p5_wt_mt.txt">examples/p5/p5_seqs/p5_wt_mt.txt</a>) are:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">P5_wt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCATTTTGACCGCGAAATTTGAACGGCGC</span>
 <span class="go">P5_mt GCGCGTGGCCATTTAGGGTATATATGGCCGAGTGAGCGAGCAGGATCTCCGCTTTGACCGCGAAATTTGAACGGCGC</span>
-</pre></div>
-</div>
-<p><em>examples/p5/chicoma_configs.txt</em></p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">IsFirstColumnId         Yes # Yes/No</span>
-<span class="go">SequencesDir            inputs/p5_seqs/</span>
-<span class="go">OutputsDir              outputs/</span>
-<span class="go">SaveFull                No  # Yes/No. if No, the simulation will save the summary, No is space efficient.</span>
-<span class="go">SaveRuntime             No  # Yes/No. if No, it will not write the runtime.</span>
-<span class="go">Flanks                  None # flanks will be added to all the seq on both sides, 26 GCs, None will not add anything</span>
-<span class="go">Temperature             310</span>
-<span class="go">Iterations              100</span>
-<span class="go">Preheating              50000</span>
-<span class="go">StepsAfterPreheating    80000</span>
-<span class="go">NNodes                  1 # Number of nodes to divide the sequences equally (--array in slurm script).</span>
-</pre></div>
-</div>
-<p><em>pydna_epbd/configs/switches.py</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;BUBBLE_MONITOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;ENERGY_MONITOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;COORD_MONITOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FLIPPING_MONITOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;FLIPPING_MONITOR_VERBOSE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;True&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MELTING_AND_FRACTION_MONITOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
-<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;MELTING_AND_FRACTION_MANY_MONITOR&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;False&quot;</span>
 </pre></div>
 </div>
 </section>
 <section id="example-usage">
 <h1>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this heading">#</a></h1>
-<p><strong>Option 1: Using single computing node:</strong>
-<em>python examples/p5/run.py</em></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">switch</span>
-
-<span class="kn">from</span> <span class="nn">input_reader</span> <span class="kn">import</span> <span class="n">read_input_data</span>
-<span class="kn">from</span> <span class="nn">simulation.simulation_steps</span> <span class="kn">import</span> <span class="n">run_sequences</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-<span class="w">   </span><span class="sd">&quot;&quot;&quot;This runs the simulation given a configuration file.&quot;&quot;&quot;</span>
-   <span class="n">job_idx</span> <span class="o">=</span> <span class="mi">0</span>
-
-   <span class="c1"># array job</span>
-   <span class="k">if</span> <span class="s2">&quot;SLURM_ARRAY_TASK_ID&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
-      <span class="n">job_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;SLURM_ARRAY_TASK_ID&quot;</span><span class="p">])</span>
-
-   <span class="c1"># InputConfigs class object</span>
-   <span class="n">input_configs</span> <span class="o">=</span> <span class="n">read_input_data</span><span class="p">(</span><span class="s2">&quot;inputs/chicoma_configs.txt&quot;</span><span class="p">)</span>
-
-   <span class="c1"># dividing the input sequences to the nodes based on job-idx</span>
-   <span class="n">chunk_size</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_configs</span><span class="o">.</span><span class="n">sequences</span><span class="p">)</span> <span class="o">/</span> <span class="n">input_configs</span><span class="o">.</span><span class="n">n_nodes</span><span class="p">)</span>
-   <span class="n">sequence_chunks</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="n">input_configs</span><span class="o">.</span><span class="n">sequences</span><span class="p">[</span><span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">chunk_size</span><span class="p">]</span>
-      <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_configs</span><span class="o">.</span><span class="n">sequences</span><span class="p">),</span> <span class="n">chunk_size</span><span class="p">)</span>
-   <span class="p">]</span>
-   <span class="n">sequences</span> <span class="o">=</span> <span class="n">sequence_chunks</span><span class="p">[</span><span class="n">job_idx</span><span class="p">]</span>
-   <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;job_idx:</span><span class="si">{</span><span class="n">job_idx</span><span class="si">}</span><span class="s2">, n_seqs:</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sequences</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-   <span class="n">run_sequences</span><span class="p">(</span><span class="n">sequences</span><span class="p">,</span> <span class="n">input_configs</span><span class="p">)</span>
+<p><strong>Option 1: Using single computing node:</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python pydna_epbd/run.py --config_filepath examples/p5/configs.txt</span>
 </pre></div>
 </div>
-<p>The above program will generate outputs in the <em>outputs</em> directory.</p>
-<p><strong>Option 2: Using multiple computing nodes (slurm):</strong>
-By default, the above example script uses single node, which is slow for a large number of sequences. To avail multiple nodes, we suggest to define variables as follows:
-First, a slurm script should define a <em>–array</em> variable.</p>
+<p><strong>Option 2: Using multiple computing nodes (SLURM):</strong>
+To avail multiple nodes, we suggest to define <em>–array</em> variable in a SLURM script:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>SBATCH<span class="w"> </span>--array<span class="o">=</span><span class="m">0</span>-5<span class="w"> </span><span class="c1"># i.e If six nodes are avilable</span>
 </pre></div>
 </div>
-<p>Then <em>NNodes</em> variable in the confiuration file should be the total number of nodes to use. For the above case:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">NNodes                  6</span>
+<p>Then, <em>ComputingNodes</em> variable in the confiuration file should be the total number of nodes to use. For the above case:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ComputingNodes = 6</span>
 </pre></div>
 </div>
 <p>Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.</p>
+<p>Example SLURM script is given <a class="reference external" href="https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/chicoma_job.sh">here</a> for P5.
+Both options will generate outputs in the <em>outputs</em> directory.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Figure 2: Average coordinates.</p></th>
+<th class="head"><p>Figure 3: Average flipping.</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><img alt="a" src="_images/p5_wtmt_avg_coord.png" /></p></td>
+<td><p><img alt="b" src="_images/p5_wtmt_avg_flip_1.414213562373096.png" /></p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h1>
-<p><a class="reference internal" href="_images/Bubbles.png"><img alt="pic2" src="_images/Bubbles.png" style="width: 45%;" /></a>
-<a class="reference internal" href="_images/p5_wtmt_avg_coord.png"><img alt="pic3" src="_images/p5_wtmt_avg_coord.png" style="width: 45%;" /></a>
-<a class="reference internal" href="_images/p5_wtmt_avg_flip_1.414213562373096.png"><img alt="pic4" src="_images/p5_wtmt_avg_flip_1.414213562373096.png" style="width: 45%;" /></a>
-<a class="reference internal" href="_images/P5_flips.png"><img alt="pic5" src="_images/P5_flips.png" style="width: 45%;" /></a>
-<a class="reference internal" href="_images/P5_qfactors.png"><img alt="pic6" src="_images/P5_qfactors.png" style="width: 45%;" /></a>
-<a class="reference internal" href="_images/svr_rbf_perf_comparison_selex.png"><img alt="pic7" src="_images/svr_rbf_perf_comparison_selex.png" style="width: 45%;" /></a>
-<a class="reference internal" href="_images/88seqs_seqlen_vs_runtime.png"><img alt="pic8" src="_images/88seqs_seqlen_vs_runtime.png" style="width: 45%;" /></a></p>
 </section>
 <section id="acknowledgments">
 <h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">#</a></h1>
@@ -609,7 +679,8 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-dna-sequences-configurations-and-switches">Example DNA sequences, Configurations and Switches</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file-structure">Configuration file structure</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-configurations-and-p5-dna-sequences">Example Configurations and P5 DNA sequences</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
