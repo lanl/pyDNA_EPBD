@@ -21,4 +21,4 @@
 ##SBATCH --array=0-299 # max 300(0-299) can be requested
 
 ## conda activate pydna_epbd_conda ## activate before running job
-python examples/p5/run.py
+python pydna_epbd/run.py --config_filepath examples/p5/configs.txt

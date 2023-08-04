@@ -1,8 +1,5 @@
 import os
-
-home_dir = ""
-
-from pydna_epbd.configs.input_configs import InputConfigs
+from pydna_epbd.configs import InputConfigs
 
 
 def read_sequences_from_a_file(
@@ -39,13 +36,9 @@ def read_sequences_from_a_file(
                 seq_id, seq = i + 1, line_items[0].strip()
 
             seq = flanks + seq + flanks
-            sequences.append(
-                (seq_output_dir, seq_id, seq)
-            )  # 1-based increamental id for sequences in a file
+            # 1-based increamental id for sequences in a file
+            sequences.append((seq_output_dir, seq_id, seq))
     return sequences
-
-
-# print(read_sequences_from_a_file.__doc__)
 
 
 def read_all_sequences(input_seqs_dir, is_first_col_id, flanks, outputs_dir):
@@ -79,7 +72,7 @@ def read_all_sequences(input_seqs_dir, is_first_col_id, flanks, outputs_dir):
     return all_seqs
 
 
-def read_input_data(configuration_filepath):
+def read_configurations(configuration_filepath):
     """Read the configs from the input configuration file.
 
     Args:
@@ -89,45 +82,40 @@ def read_input_data(configuration_filepath):
     Returns:
         InputConfigs: The class containing specific format for running the simulations.
     """
-    with open(configuration_filepath, "r") as file:
-        ret = file.readline().strip().split()
-        is_first_col_id = ret[1] == "Yes"
 
-        ret = file.readline().strip().split()
-        input_seqs_dir = ret[1]
+    # parsing configuration file
+    configs = {}
+    with open(configuration_filepath, "r") as myfile:
+        for line in myfile:
+            name, val = line.partition("=")[::2]
+            configs[name.strip()] = val.strip()
 
-        ret = file.readline().strip().split()
-        outputs_dir = ret[1]
+    # global simulation configs
+    is_first_col_id = configs["IsFirstColumnId"] == "Yes"
+    save_full = configs["SaveFull"] == "Yes"
+    save_runtime = configs["SaveRuntime"] == "Yes"
+    input_seqs_dir = configs["SequencesDir"]
+    outputs_dir = configs["OutputsDir"]
+    flanks = "" if configs["Flanks"] == "None" else configs["Flanks"]
+    temperature = float(configs["Temperature"])
+    n_iterations = int(configs["Iterations"])
+    n_preheating_steps = int(configs["PreheatingSteps"])
+    n_post_preheating_steps = int(configs["PostPreheatingSteps"])
+    n_nodes = int(configs["ComputingNodes"])
 
-        ret = file.readline().strip().split()
-        save_full = ret[1] == "Yes"
+    # monitor configs
+    os.environ["BUBBLE_MONITOR"] = configs["BubbleMonitor"]
+    os.environ["COORD_MONITOR"] = configs["CoordinateMonitor"]
+    os.environ["FLIPPING_MONITOR_VERBOSE"] = configs["FlippingMonitorVerbose"]
+    os.environ["FLIPPING_MONITOR"] = configs["FlippingMonitor"]
+    os.environ["ENERGY_MONITOR"] = configs["EnergyMonitor"]
+    os.environ["MELTING_AND_FRACTION_MONITOR"] = configs["MeltingAndFractionMonitor"]
+    os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] = configs[
+        "MeltingAndFractionManyMonitor"
+    ]
 
-        ret = file.readline().strip().split()
-        save_runtime = ret[1] == "Yes"
-
-        ret = file.readline().strip().split()
-        flanks = "" if ret[1] == "None" else ret[1]
-
-        sequences = read_all_sequences(
-            input_seqs_dir, is_first_col_id, flanks, outputs_dir
-        )
-
-        ret = file.readline().strip().split()
-        temperature = float(ret[1])
-
-        ret = file.readline().strip().split()
-        n_iterations = int(ret[1])  # Reading the number of iterations
-
-        ret = file.readline().strip().split()
-        n_preheating_steps = int(ret[1])  # Reading the number of Preheating
-
-        ret = file.readline().strip().split()
-        n_steps_after_preheating = int(
-            ret[1]
-        )  # Reading the number of after preheating steps
-
-        ret = file.readline().strip().split()
-        n_nodes = int(ret[1])
+    # reading sequences and creating outputs directory
+    sequences = read_all_sequences(input_seqs_dir, is_first_col_id, flanks, outputs_dir)
 
     input_configs = InputConfigs(
         temperature,
@@ -135,10 +123,14 @@ def read_input_data(configuration_filepath):
         outputs_dir,
         n_iterations,
         n_preheating_steps,
-        n_steps_after_preheating,
+        n_post_preheating_steps,
         n_nodes,
         save_full,
         save_runtime,
     )
+
     print(input_configs)
     return input_configs
+
+
+# read_configurations("../examples/configs.txt")

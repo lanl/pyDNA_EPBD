@@ -44,7 +44,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'modules/pydna_epbd.simulation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="pydna_epbd.utils package" href="pydna_epbd.utils.html" />
     <link rel="prev" title="pydna_epbd.monitors package" href="pydna_epbd.monitors.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -125,10 +124,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pydna_epbd</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="pydna_epbd.html">pydna_epbd package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.configs.html">pydna_epbd.configs package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html">pydna_epbd.monitors package</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">pydna_epbd.simulation package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.utils.html">pydna_epbd.utils package</a></li>
 </ul>
 </li>
 </ul>
@@ -280,18 +277,16 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.aggregate_outputs_and_write">pydna_epbd.simulation.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.constants">pydna_epbd.simulation.constants module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.dna">pydna_epbd.simulation.dna module</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA"><code class="docutils literal notranslate"><span class="pre">DNA</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA.reset"><code class="docutils literal notranslate"><span class="pre">DNA.reset()</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.input_reader">pydna_epbd.simulation.input_reader module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.input_reader.read_all_sequences"><code class="docutils literal notranslate"><span class="pre">read_all_sequences()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.input_reader.read_input_data"><code class="docutils literal notranslate"><span class="pre">read_input_data()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.input_reader.read_sequences_from_a_file"><code class="docutils literal notranslate"><span class="pre">read_sequences_from_a_file()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.mc_simulation">pydna_epbd.simulation.mc_simulation module</a><ul class="nav section-nav flex-column">
@@ -325,6 +320,26 @@ document.write(`
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
+<section id="module-pydna_epbd.simulation.aggregate_outputs_and_write">
+<span id="pydna-epbd-simulation-aggregate-outputs-and-write-module"></span><h2>pydna_epbd.simulation.aggregate_outputs_and_write module<a class="headerlink" href="#module-pydna_epbd.simulation.aggregate_outputs_and_write" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.aggregate_outputs_and_write.</span></span><span class="sig-name descname"><span class="pre">aggregate_outputs_for_single_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_monitors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_configs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/aggregate_outputs_and_write.html#aggregate_outputs_for_single_temp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp" title="Permalink to this definition">#</a></dt>
+<dd><p>Collect outputs of all the monitors from independent iterations and save them as dictionary object.
+An example output pickle file looks like the following when only the bubble and coordinate monitors are switched on:
+{“bubbles”: numpy.ndarray, “coord”: numpy.ndarray}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list_of_monitors</strong> (<em>list</em>) – List of monitors.</p></li>
+<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.html#pydna_epbd.configs.InputConfigs" title="pydna_epbd.configs.InputConfigs"><em>InputConfigs</em></a>) – An InputConfigs object.</p></li>
+<li><p><strong>out_filepath</strong> (<em>str</em>) – Directory path to save the simulation output.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-pydna_epbd.simulation.constants">
 <span id="pydna-epbd-simulation-constants-module"></span><h2>pydna_epbd.simulation.constants module<a class="headerlink" href="#module-pydna_epbd.simulation.constants" title="Permalink to this heading">#</a></h2>
 </section>
@@ -349,74 +364,6 @@ the distances among them, bp energies, total energy, stacking terms,
 hydrogen bond types and other constants.</p>
 </dd></dl>
 
-</dd></dl>
-
-</section>
-<section id="module-pydna_epbd.simulation.input_reader">
-<span id="pydna-epbd-simulation-input-reader-module"></span><h2>pydna_epbd.simulation.input_reader module<a class="headerlink" href="#module-pydna_epbd.simulation.input_reader" title="Permalink to this heading">#</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="pydna_epbd.simulation.input_reader.read_all_sequences">
-<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.input_reader.</span></span><span class="sig-name descname"><span class="pre">read_all_sequences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_seqs_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_first_col_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flanks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/input_reader.html#read_all_sequences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.input_reader.read_all_sequences" title="Permalink to this definition">#</a></dt>
-<dd><p>Read all sequences for the simulation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>input_seqs_dir</strong> (<em>str</em>) – Directory that contains files containing DNA sequences.</p></li>
-<li><p><strong>is_first_col_id</strong> (<em>bool</em>) – Whether or not the first column of the sequence containing file determines sequence id.</p></li>
-<li><p><strong>flanks</strong> (<em>str</em>) – Flanks are added at both sides of all input sequences.</p></li>
-<li><p><strong>outputs_dir</strong> (<em>str</em>) – The output directory for saving simulation outputs.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A list containing all sequences in the input directory.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pydna_epbd.simulation.input_reader.read_input_data">
-<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.input_reader.</span></span><span class="sig-name descname"><span class="pre">read_input_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configuration_filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/input_reader.html#read_input_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.input_reader.read_input_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Read the configs from the input configuration file.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>configuration_filepath</strong> (<em>str</em>) – The configurations needed to run MCMC simulations.
-The structure of the configs are given in the Readme file.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The class containing specific format for running the simulations.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="pydna_epbd.configs.html#pydna_epbd.configs.input_configs.InputConfigs" title="pydna_epbd.configs.input_configs.InputConfigs">InputConfigs</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="pydna_epbd.simulation.input_reader.read_sequences_from_a_file">
-<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.input_reader.</span></span><span class="sig-name descname"><span class="pre">read_sequences_from_a_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_seqs_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_with_ext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_first_col_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flanks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/input_reader.html#read_sequences_from_a_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.input_reader.read_sequences_from_a_file" title="Permalink to this definition">#</a></dt>
-<dd><p>Read DNA sequences from one input file. This also creates output directories for saving simulation outputs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>input_seqs_dir</strong> (<em>str</em>) – Directory that contains DNA sequences file.</p></li>
-<li><p><strong>filename_with_ext</strong> (<em>str</em>) – Filename with extension.</p></li>
-<li><p><strong>is_first_col_id</strong> (<em>bool</em>) – Whether or not the first column of the sequence containing file determines sequence id.</p></li>
-<li><p><strong>flanks</strong> (<em>str</em>) – Flanks are added at both sides of all input sequences.</p></li>
-<li><p><strong>outputs_dir</strong> (<em>str</em>) – The output directory for saving simulation outputs.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A list of tuples containing all sequences in the input sequence file with seq-id and output directory.
-If seq-id is not present, 1-indexed incrementally generated seq-id will be attached.
-Format: [(“seq_output_dir”, “seq_id”, “seq”)]</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
-</dd>
-</dl>
 </dd></dl>
 
 </section>
@@ -477,7 +424,7 @@ to parallaly run n_iterations.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>sequences</strong> (<em>list</em>) – List of tuples. Format: [(“seq_output_dir”, “seq_id”, “seq”)]</p></li>
-<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.configs.html#pydna_epbd.configs.input_configs.InputConfigs" title="pydna_epbd.configs.input_configs.InputConfigs"><em>InputConfigs</em></a>) – A InputConfigs object contaning all configurations.</p></li>
+<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.html#pydna_epbd.configs.InputConfigs" title="pydna_epbd.configs.InputConfigs"><em>InputConfigs</em></a>) – A InputConfigs object contaning all configurations.</p></li>
 </ul>
 </dd>
 </dl>
@@ -534,15 +481,6 @@ to parallaly run n_iterations.</p>
         <p class="prev-next-title">pydna_epbd.monitors package</p>
       </div>
     </a>
-    <a class="right-next"
-       href="pydna_epbd.utils.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">pydna_epbd.utils package</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -562,18 +500,16 @@ to parallaly run n_iterations.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.aggregate_outputs_and_write">pydna_epbd.simulation.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.constants">pydna_epbd.simulation.constants module</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.dna">pydna_epbd.simulation.dna module</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA"><code class="docutils literal notranslate"><span class="pre">DNA</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA.reset"><code class="docutils literal notranslate"><span class="pre">DNA.reset()</span></code></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.input_reader">pydna_epbd.simulation.input_reader module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.input_reader.read_all_sequences"><code class="docutils literal notranslate"><span class="pre">read_all_sequences()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.input_reader.read_input_data"><code class="docutils literal notranslate"><span class="pre">read_input_data()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.input_reader.read_sequences_from_a_file"><code class="docutils literal notranslate"><span class="pre">read_sequences_from_a_file()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.mc_simulation">pydna_epbd.simulation.mc_simulation module</a><ul class="nav section-nav flex-column">

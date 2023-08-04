@@ -7,42 +7,12 @@ Welcome to pyDNA-EPBD's documentation!
 ======================================
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
 
-|pic1|    
-|pic2|
-|pic3|
-|pic4|
-|pic5|
-|pic6|
-|pic7|
-|pic8|
+.. image:: ../../plots/mcmc_algorithm.png
+   :width: 50%
+   :align: center
 
-.. |pic1| image:: ../../plots/mcmc_algorithm.png
-   :width: 45%
-
-.. |pic2| image:: ../../plots/p5_wtmt_avg_coord.png
-   :width: 45%
-
-.. |pic3| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
-   :width: 45%
-
-.. |pic4| image:: ../../plots/Bubbles.png
-   :width: 45%
-
-.. |pic5| image:: ../../plots/P5_flips.png
-   :width: 45%
-
-.. |pic6| image:: ../../plots/P5_qfactors.png
-   :width: 45%
-
-.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
-   :width: 45%
-
-.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
-   :width: 45%
-
-**Background:** The dynamic behavior of DNA sequences, including local transient openings or *breathing* and *flipping*, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
-
-**Results:** To address this, we have developed pyDNA-EPBD, a Python-based software tool that employs an extended version of the Peyrard–Bishop–Dauxois (EPBD) model. This extension integrates a sequence-dependent stacking term, enabling a more precise description of the DNA melting behavior for homogenous and periodic sequences. Through the use of a Monte Carlo Markov Chain (MCMC) approach, pyDNA-EPBD simulates DNA dynamics and generates data on DNA breathing characteristics such as bubble coordinates and flipping.
+The dynamic behavior of DNA sequences, including local transient openings or *breathing* and *flipping*, is crucial in a wide range of biological processes and genomic disorders. However, accurate modeling and simulation of these phenomena, particularly for homogeneous and periodic DNA sequences, have remained a challenge due to the complex interplay of factors such as hydrogen bonding, electrostatic interactions, and base stacking.
+To address this, we have developed **pyDNA-EPBD**, a Python-based software tool that employs an extended version of the Peyrard–Bishop–Dauxois (EPBD) model. This extension integrates a sequence-dependent stacking term, enabling a more precise description of the DNA melting behavior for homogenous and periodic sequences. Through the use of a Monte Carlo Markov Chain (MCMC) approach, pyDNA-EPBD simulates DNA dynamics and generates data on DNA breathing characteristics such as bubble coordinates and flipping.
 
 Resources
 ========================================
@@ -55,7 +25,7 @@ Resources
 
 Installation
 ========================================
-.. code-block:: console
+.. code-block:: shell
       
       git clone https://github.com/lanl/pyDNA_EPBD.git
       cd pyDNA_EPBD
@@ -63,23 +33,26 @@ Installation
       conda activate pydnaepbd_pypy39_conda
       python setup.py install
 
-      # Test to see if installation is successfull
-      Type python in the shell
-      >>>> import pydna_epbd.version as v
-      >>>> v.__version__
-      '1.0.0'
-      
-      # To remove the conda venv
+      # Test to see if installation is successfull, run the following command. This will show that P5 BDs are already computed in the "outputs" directory
+      python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
+
+      # The other libraries to analyze the DNA breathing dynamics (BD) can be installed using the following command:
+      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn -y
+      # The above libraries can be dependent on the following system environments.  
+      sudo apt install libopenblas-dev  pkg-config libopenblas64-dev pypy-dev
+
+      # To deactivate and remove the venv
       conda deactivate
       conda remove --name pydnaepbd_pypy39_conda --all -y
 
 Prerequisites
 ========================================
 To run the simulation:
+   * argparse>=1.4.0
    * joblib>=1.3.0
    * numpy>=1.25.1
 
-To analyze:
+To analyze the DNA breathing dynamics (BD):
    * scikit-learn>=1.3.0
    * scipy>=1.11.1
    * pandas>=2.0.3
@@ -182,6 +155,36 @@ Then *NNodes* variable in the confiuration file should be the total number of no
 
 Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
       
+Results
+==================
+|pic2|
+|pic3|
+|pic4|
+|pic5|
+|pic6|
+|pic7|
+|pic8|
+
+.. |pic2| image:: ../../plots/Bubbles.png
+   :width: 45%
+
+.. |pic3| image:: ../../plots/p5_wtmt_avg_coord.png
+   :width: 45%
+
+.. |pic4| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
+   :width: 45%
+
+.. |pic5| image:: ../../plots/P5_flips.png
+   :width: 45%
+
+.. |pic6| image:: ../../plots/P5_qfactors.png
+   :width: 45%
+
+.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
+   :width: 45%
+
+.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
+   :width: 45%      
 
 Acknowledgments
 ========================================

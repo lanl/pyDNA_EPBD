@@ -32,7 +32,7 @@ extensions = [
 
 autoclass_content = "both"
 templates_path = ["_templates"]
-exclude_patterns = ["version.py"]
+exclude_patterns = ["version", "pickle_utils"]
 
 
 # -- Options for HTML output -------------------------------------------------

@@ -4,14 +4,6 @@ pydna\_epbd.monitors package
 Submodules
 ----------
 
-pydna\_epbd.monitors.aggregate\_outputs\_and\_write module
-----------------------------------------------------------
-
-.. automodule:: pydna_epbd.monitors.aggregate_outputs_and_write
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pydna\_epbd.monitors.all\_monitors module
 -----------------------------------------
 

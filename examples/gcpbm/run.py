@@ -1,7 +1,7 @@
 import os
 import math
 import pydna_epbd.configs.switches as switches
-from pydna_epbd.simulation.input_reader import read_input_data
+from deprecated.input_reader import read_input_data
 from pydna_epbd.simulation.simulation_steps import run_sequences
 
 
