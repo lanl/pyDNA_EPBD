@@ -13,6 +13,6 @@ BubbleMonitor = On
 CoordinateMonitor = On
 FlippingMonitorVerbose = On
 FlippingMonitor = Off
-EnergyMonitor = off
+EnergyMonitor = Off
 MeltingAndFractionMonitor = Off
 MeltingAndFractionManyMonitor = Off
