@@ -3,22 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-
-.. |pic2| image:: plots/Bubbles.png
-   :width: 45%
-
-.. |pic5| image:: plots/P5_flips.png
-   :width: 45%
-
-.. |pic6| image:: plots/P5_qfactors.png
-   :width: 45%
-
-.. |pic7| image:: plots/svr_rbf_perf_comparison_selex.png
-   :width: 45%
-
-.. |pic8| image:: plots/88seqs_seqlen_vs_runtime.png
-   :width: 45%    
-
 Welcome to pyDNA-EPBD's documentation!
 ======================================
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
@@ -57,9 +41,7 @@ Installation
       python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
 
       # The other libraries to analyze the DNA breathing dynamics can be installed using the following command:
-      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn -y
-      # The above libraries can be dependent on the following system environments.  
-      sudo apt install libopenblas-dev  pkg-config libopenblas64-dev pypy-dev
+      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn jupyterlab -y
 
       # To deactivate and remove the venv
       conda deactivate
@@ -218,24 +200,33 @@ Both options will generate outputs in the *outputs* directory.
 Results
 =======================
       
-|pic4|
+.. figure:: plots/Bubbles.png
+   :width: 60%
+   :align: center
 
-Figure 3: Overview of Bubble Tensor  for p5 wild type and mutant type for different thresholds.
+   Figure 4: Overview of Bubble Tensor for P5 wild type and mutant type for different thresholds.
 
+.. |P5_flips| image:: plots/P5_flips.png
+   :width: 45%
 
-|pic5|
+.. |P5_qfactors| image:: plots/P5_qfactors.png
+   :width: 45%
 
-|pic6|
+|P5_flips| |P5_qfactors|
 
-Figure 4: Q factor analysis.
+Figure 5: P5 Q-factor analysis.
 
-|pic7|
+.. figure:: plots/svr_rbf_perf_comparison_selex.png
+   :width: 55%
+   :align: center
+   
+   Figure 6: Utility of breating characeristics on TF binding specificity for selex data.
 
-Figure 5: Utility of breating characeristics on TF binding specificity for selex data.
-
-|pic8|
-
-Figure 6: Scalability analysis.
+.. figure:: plots/88seqs_seqlen_vs_runtime.png
+   :width: 45%     
+   :align: center
+   
+   Figure 7: Scalability analysis.
 
 Acknowledgments
 ========================================

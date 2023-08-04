@@ -2,22 +2,7 @@
    sphinx-quickstart on Mon Jul 31 12:21:40 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
-
-.. |pic2| image:: ../../plots/Bubbles.png
-   :width: 45%
-
-.. |pic5| image:: ../../plots/P5_flips.png
-   :width: 45%
-
-.. |pic6| image:: ../../plots/P5_qfactors.png
-   :width: 45%
-
-.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
-   :width: 45%
-
-.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
-   :width: 45%    
+ 
 
 Welcome to pyDNA-EPBD's documentation!
 ======================================
@@ -57,9 +42,7 @@ Installation
       python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
 
       # The other libraries to analyze the DNA breathing dynamics can be installed using the following command:
-      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn -y
-      # The above libraries can be dependent on the following system environments.  
-      sudo apt install libopenblas-dev  pkg-config libopenblas64-dev pypy-dev
+      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn jupyterlab -y
 
       # To deactivate and remove the venv
       conda deactivate
@@ -218,15 +201,41 @@ Both options will generate outputs in the *outputs* directory.
 Results
 ==================
 
-  
+.. figure:: ../../plots/Bubbles.png
+   :width: 60%
+   :align: center
+
+   Figure 4: Overview of Bubble Tensor for P5 wild type and mutant type for different thresholds.
+
+.. |P5_flips| image:: ../../plots/P5_flips.png
+   :width: 45%
+
+.. |P5_qfactors| image:: ../../plots/P5_qfactors.png
+   :width: 45%
+
+|P5_flips| |P5_qfactors|
+
+Figure 5: P5 Q-factor analysis.
+
+.. figure:: ../../plots/svr_rbf_perf_comparison_selex.png
+   :width: 55%
+   :align: center
+   
+   Figure 6: Utility of breating characeristics on TF binding specificity for selex data.
+
+.. figure:: ../../plots/88seqs_seqlen_vs_runtime.png
+   :width: 45%     
+   :align: center
+   
+   Figure 7: Scalability analysis.
 
 Acknowledgments
 ========================================
-
+Los Alamos National Lab (LANL), T-1
 
 Copyright Notice
 ========================================
-
+© (or copyright) 2023. Triad National Security, LLC. All rights reserved. This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S. Department of Energy/National Nuclear Security Administration. All rights in the program are reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear Security Administration. The Government is granted for itself and others acting on its behalf a nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare derivative works, distribute copies to the public, perform publicly and display publicly, and to permit others to do so.
 
 License
 ========================================
@@ -255,6 +264,7 @@ OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 Documentation
 ==================

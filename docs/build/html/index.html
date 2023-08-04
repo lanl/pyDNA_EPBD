@@ -338,9 +338,7 @@ python<span class="w"> </span>setup.py<span class="w"> </span>install
 python<span class="w"> </span>pydna_epbd/run.py<span class="w"> </span>--config_filepath<span class="w"> </span>examples/p5/configs.txt
 
 <span class="c1"># The other libraries to analyze the DNA breathing dynamics can be installed using the following command:</span>
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>scikit-learn<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>-y
-<span class="c1"># The above libraries can be dependent on the following system environments.</span>
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libopenblas-dev<span class="w">  </span>pkg-config<span class="w"> </span>libopenblas64-dev<span class="w"> </span>pypy-dev
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>scikit-learn<span class="w"> </span>scipy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>jupyterlab<span class="w"> </span>-y
 
 <span class="c1"># To deactivate and remove the venv</span>
 conda<span class="w"> </span>deactivate
@@ -521,12 +519,34 @@ Both options will generate outputs in the <em>outputs</em> directory.</p>
 </section>
 <section id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h1>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/Bubbles.png"><img alt="_images/Bubbles.png" src="_images/Bubbles.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 4: Overview of Bubble Tensor for P5 wild type and mutant type for different thresholds.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="_images/P5_flips.png"><img alt="P5_flips" src="_images/P5_flips.png" style="width: 45%;" /></a> <a class="reference internal" href="_images/P5_qfactors.png"><img alt="P5_qfactors" src="_images/P5_qfactors.png" style="width: 45%;" /></a></p>
+<p>Figure 5: P5 Q-factor analysis.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/svr_rbf_perf_comparison_selex.png"><img alt="_images/svr_rbf_perf_comparison_selex.png" src="_images/svr_rbf_perf_comparison_selex.png" style="width: 55%;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 6: Utility of breating characeristics on TF binding specificity for selex data.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/88seqs_seqlen_vs_runtime.png"><img alt="_images/88seqs_seqlen_vs_runtime.png" src="_images/88seqs_seqlen_vs_runtime.png" style="width: 45%;" /></a>
+<figcaption>
+<p><span class="caption-text">Figure 7: Scalability analysis.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="acknowledgments">
 <h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">#</a></h1>
+<p>Los Alamos National Lab (LANL), T-1</p>
 </section>
 <section id="copyright-notice">
 <h1>Copyright Notice<a class="headerlink" href="#copyright-notice" title="Permalink to this heading">#</a></h1>
+<p>© (or copyright) 2023. Triad National Security, LLC. All rights reserved. This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S. Department of Energy/National Nuclear Security Administration. All rights in the program are reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear Security Administration. The Government is granted for itself and others acting on its behalf a nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare derivative works, distribute copies to the public, perform publicly and display publicly, and to permit others to do so.</p>
 </section>
 <section id="license">
 <h1>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h1>
