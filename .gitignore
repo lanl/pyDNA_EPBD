@@ -48,5 +48,11 @@ coverage.xml
 docs/_build/
 
 
-private/
 .vscode
+notes.txt
+
+private/
+deprecated/
+outputs/
+
+docs/*

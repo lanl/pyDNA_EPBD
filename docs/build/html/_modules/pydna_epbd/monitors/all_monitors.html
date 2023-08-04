@@ -122,10 +122,8 @@
         <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../modules/modules.html">pydna_epbd</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../modules/pydna_epbd.html">pydna_epbd package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../modules/pydna_epbd.configs.html">pydna_epbd.configs package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../modules/pydna_epbd.monitors.html">pydna_epbd.monitors package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../modules/pydna_epbd.simulation.html">pydna_epbd.simulation package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../modules/pydna_epbd.utils.html">pydna_epbd.utils package</a></li>
 </ul>
 </li>
 </ul>
@@ -259,33 +257,33 @@ document.write(`
         <span class="n">total_steps</span> <span class="o">=</span> <span class="n">n_preheating_steps</span><span class="p">,</span> <span class="n">n_steps_after_preheating</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BUBBLE_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;BUBBLE_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble_monitor</span> <span class="o">=</span> <span class="n">BubbleMonitor</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble_monitor</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;COORD_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;COORD_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">coord_monitor</span> <span class="o">=</span> <span class="n">CoordMonitor</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coord_monitor</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FLIPPING_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FLIPPING_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">flipping_monitor</span> <span class="o">=</span> <span class="n">FlippingMonitor</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flipping_monitor</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FLIPPING_MONITOR_VERBOSE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;FLIPPING_MONITOR_VERBOSE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">flipping_monitor_verbose</span> <span class="o">=</span> <span class="n">FlippingMonitorVerbose</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flipping_monitor_verbose</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;ENERGY_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;ENERGY_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">energy_monitor</span> <span class="o">=</span> <span class="n">EnergyMonitor</span><span class="p">(</span><span class="n">dna</span><span class="p">,</span> <span class="n">total_steps</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">energy_monitor</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MELTING_AND_FRACTION_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MELTING_AND_FRACTION_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">melting_and_fraction_monitor</span> <span class="o">=</span> <span class="n">MeltingAndFractionMonitor</span><span class="p">(</span>
                 <span class="n">dna</span><span class="p">,</span> <span class="n">n_steps_after_preheating</span>
             <span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">monitors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">melting_and_fraction_monitor</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MELTING_AND_FRACTION_MANY_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MELTING_AND_FRACTION_MANY_MONITOR&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;On&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">melting_and_fraction_many_monitor</span> <span class="o">=</span> <span class="n">MeltingAndFractionManyMonitor</span><span class="p">(</span>
                 <span class="n">dna</span><span class="p">,</span> <span class="n">n_preheating_steps</span>
             <span class="p">)</span>

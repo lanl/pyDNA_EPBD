@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pydna_epbd.simulation package" href="pydna_epbd.simulation.html" />
-    <link rel="prev" title="pydna_epbd.configs package" href="pydna_epbd.configs.html" />
+    <link rel="prev" title="pydna_epbd package" href="pydna_epbd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,10 +125,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pydna_epbd</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active has-children"><a class="reference internal" href="pydna_epbd.html">pydna_epbd package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.configs.html">pydna_epbd.configs package</a></li>
 <li class="toctree-l3 current active"><a class="current reference internal" href="#">pydna_epbd.monitors package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html">pydna_epbd.simulation package</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.utils.html">pydna_epbd.utils package</a></li>
 </ul>
 </li>
 </ul>
@@ -280,10 +278,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.aggregate_outputs_and_write">pydna_epbd.monitors.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.all_monitors">pydna_epbd.monitors.all_monitors module</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors"><code class="docutils literal notranslate"><span class="pre">Monitors</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_iter()</span></code></a></li>
@@ -385,26 +379,6 @@ document.write(`
 <h1>pydna_epbd.monitors package<a class="headerlink" href="#pydna-epbd-monitors-package" title="Permalink to this heading">#</a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="module-pydna_epbd.monitors.aggregate_outputs_and_write">
-<span id="pydna-epbd-monitors-aggregate-outputs-and-write-module"></span><h2>pydna_epbd.monitors.aggregate_outputs_and_write module<a class="headerlink" href="#module-pydna_epbd.monitors.aggregate_outputs_and_write" title="Permalink to this heading">#</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp">
-<span class="sig-prename descclassname"><span class="pre">pydna_epbd.monitors.aggregate_outputs_and_write.</span></span><span class="sig-name descname"><span class="pre">aggregate_outputs_for_single_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_monitors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_configs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/monitors/aggregate_outputs_and_write.html#aggregate_outputs_for_single_temp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp" title="Permalink to this definition">#</a></dt>
-<dd><p>Collect outputs of all the monitors from independent iterations and save them as dictionary object.
-An example output pickle file looks like the following when only the bubble and coordinate monitors are switched on:
-{“bubbles”: numpy.ndarray, “coord”: numpy.ndarray}</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>list_of_monitors</strong> (<em>list</em>) – List of monitors.</p></li>
-<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.configs.html#pydna_epbd.configs.input_configs.InputConfigs" title="pydna_epbd.configs.input_configs.InputConfigs"><em>InputConfigs</em></a>) – An InputConfigs object.</p></li>
-<li><p><strong>out_filepath</strong> (<em>str</em>) – Directory path to save the simulation output.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 <section id="module-pydna_epbd.monitors.all_monitors">
 <span id="pydna-epbd-monitors-all-monitors-module"></span><h2>pydna_epbd.monitors.all_monitors module<a class="headerlink" href="#module-pydna_epbd.monitors.all_monitors" title="Permalink to this heading">#</a></h2>
@@ -854,12 +828,12 @@ Optional, since not all child monitors need to record at temperature end.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pydna_epbd.configs.html"
+       href="pydna_epbd.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">pydna_epbd.configs package</p>
+        <p class="prev-next-title">pydna_epbd package</p>
       </div>
     </a>
     <a class="right-next"
@@ -890,10 +864,6 @@ Optional, since not all child monitors need to record at temperature end.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.aggregate_outputs_and_write">pydna_epbd.monitors.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
-</ul>
-</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.monitors.all_monitors">pydna_epbd.monitors.all_monitors module</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors"><code class="docutils literal notranslate"><span class="pre">Monitors</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_iter()</span></code></a></li>

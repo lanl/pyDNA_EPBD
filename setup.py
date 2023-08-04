@@ -25,6 +25,7 @@ setup(
     platforms=["Linux", "Mac", "Windows"],
     include_package_data=True,
     setup_requires=[
+        "argparse",
         "numpy",
         "joblib",
     ],
