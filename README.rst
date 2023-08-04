@@ -4,19 +4,19 @@
    contain the root `toctree` directive.
 
 
-.. |pic2| image:: ../../plots/Bubbles.png
+.. |pic2| image:: plots/Bubbles.png
    :width: 45%
 
-.. |pic5| image:: ../../plots/P5_flips.png
+.. |pic5| image:: plots/P5_flips.png
    :width: 45%
 
-.. |pic6| image:: ../../plots/P5_qfactors.png
+.. |pic6| image:: plots/P5_qfactors.png
    :width: 45%
 
-.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
+.. |pic7| image:: plots/svr_rbf_perf_comparison_selex.png
    :width: 45%
 
-.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
+.. |pic8| image:: plots/88seqs_seqlen_vs_runtime.png
    :width: 45%    
 
 Welcome to pyDNA-EPBD's documentation!
@@ -24,7 +24,7 @@ Welcome to pyDNA-EPBD's documentation!
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
 
 
-.. figure:: ../../plots/mcmc_algorithm.png
+.. figure:: plots/mcmc_algorithm.png
     :width: 50%
     :align: center
     
@@ -203,8 +203,8 @@ Now all the input DNA sequences will be divided into Six chunks to run independe
 Example SLURM script is given `here <https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/chicoma_job.sh>`_ for P5.
 Both options will generate outputs in the *outputs* directory.
 
-.. |a| image:: ../../plots/p5_wtmt_avg_coord.png
-.. |b| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
+.. |a| image:: plots/p5_wtmt_avg_coord.png
+.. |b| image:: plots/p5_wtmt_avg_flip_1.414213562373096.png
 
 .. list-table:: 
    :widths: 50 50
