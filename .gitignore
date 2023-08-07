@@ -57,3 +57,4 @@ outputs/
 
 *.nf*
 docs/*
+docs_builder/*

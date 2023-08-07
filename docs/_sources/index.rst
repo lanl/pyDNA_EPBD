@@ -344,11 +344,11 @@ How to Cite pyDNA-EPBD?
                         Usheva, Anny and 
                         Bishop, Alan and 
                         Alexandrov, Boian},
-      title        = {ppyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation},
+      title        = {pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation},
       month        = Aug,
       year         = 2023,
       publisher    = {Zenodo},
       version      = {v1.0.0},
-      doi          = {10.5281/zenodo.5758446},
-      url          = {https://doi.org/10.5281/zenodo.5758446}
+      doi          = {10.5281/zenodo.8222805},
+      url          = {https://doi.org/10.5281/zenodo.8222805}
       }
