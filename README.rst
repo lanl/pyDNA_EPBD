@@ -337,8 +337,8 @@ How to Cite pyDNA-EPBD?
       year         = 2023,
       publisher    = {Zenodo},
       version      = {v1.0.0},
-      doi          = {10.5281/zenodo.5758446},
-      url          = {https://doi.org/10.5281/zenodo.5758446}
+      doi          = {10.5281/zenodo.8222805},
+      url          = {https://doi.org/10.5281/zenodo.8222805}
       }
 
 
