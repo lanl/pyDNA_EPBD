@@ -1,0 +1,583 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>pydna_epbd.simulation package &#8212; pyDNA-EPBD 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/pydna_epbd.simulation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="pydna_epbd.monitors package" href="pydna_epbd.monitors.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">pyDNA-EPBD 1.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pydna_epbd</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pydna_epbd.html">pydna_epbd package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html">pydna_epbd.monitors package</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">pydna_epbd.simulation package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/modules/pydna_epbd.simulation.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pydna_epbd.simulation package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.aggregate_outputs_and_write">pydna_epbd.simulation.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.constants">pydna_epbd.simulation.constants module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.dna">pydna_epbd.simulation.dna module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA"><code class="docutils literal notranslate"><span class="pre">DNA</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA.reset"><code class="docutils literal notranslate"><span class="pre">DNA.reset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.mc_simulation">pydna_epbd.simulation.mc_simulation module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.Simulation.execute"><code class="docutils literal notranslate"><span class="pre">Simulation.execute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.Simulation.init_temp"><code class="docutils literal notranslate"><span class="pre">Simulation.init_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.random"><code class="docutils literal notranslate"><span class="pre">random()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.simulation_steps">pydna_epbd.simulation.simulation_steps module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.simulation_steps.run_sequences"><code class="docutils literal notranslate"><span class="pre">run_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.simulation_steps.run_single_iteration"><code class="docutils literal notranslate"><span class="pre">run_single_iteration()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pydna-epbd-simulation-package">
+<h1>pydna_epbd.simulation package<a class="headerlink" href="#pydna-epbd-simulation-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pydna_epbd.simulation.aggregate_outputs_and_write">
+<span id="pydna-epbd-simulation-aggregate-outputs-and-write-module"></span><h2>pydna_epbd.simulation.aggregate_outputs_and_write module<a class="headerlink" href="#module-pydna_epbd.simulation.aggregate_outputs_and_write" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.aggregate_outputs_and_write.</span></span><span class="sig-name descname"><span class="pre">aggregate_outputs_for_single_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_monitors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_configs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/aggregate_outputs_and_write.html#aggregate_outputs_for_single_temp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp" title="Permalink to this definition">#</a></dt>
+<dd><p>Collect outputs of all the monitors from independent iterations and save them as dictionary object.
+An example output pickle file looks like the following when only the bubble and coordinate monitors are switched on:
+{“bubbles”: numpy.ndarray, “coord”: numpy.ndarray}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list_of_monitors</strong> (<em>list</em>) – List of monitors.</p></li>
+<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.html#pydna_epbd.configs.InputConfigs" title="pydna_epbd.configs.InputConfigs"><em>InputConfigs</em></a>) – An InputConfigs object.</p></li>
+<li><p><strong>out_filepath</strong> (<em>str</em>) – Directory path to save the simulation output.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.simulation.constants">
+<span id="pydna-epbd-simulation-constants-module"></span><h2>pydna_epbd.simulation.constants module<a class="headerlink" href="#module-pydna_epbd.simulation.constants" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pydna_epbd.simulation.dna">
+<span id="pydna-epbd-simulation-dna-module"></span><h2>pydna_epbd.simulation.dna module<a class="headerlink" href="#module-pydna_epbd.simulation.dna" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.dna.DNA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.dna.</span></span><span class="sig-name descname"><span class="pre">DNA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/dna.html#DNA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.dna.DNA" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The DNA object for MCMC simulation.</p>
+<p>Initialize a DNA object from an input DNA sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seq</strong> (<em>str</em>) – A DNA sequence. The characters are supposed to be in {A,C,G,T} (upper case).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.dna.DNA.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/dna.html#DNA.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.dna.DNA.reset" title="Permalink to this definition">#</a></dt>
+<dd><p>A DNA object is initialized with coordinates (left and right bases),
+the distances among them, bp energies, total energy, stacking terms,
+hydrogen bond types and other constants.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.simulation.mc_simulation">
+<span id="pydna-epbd-simulation-mc-simulation-module"></span><h2>pydna_epbd.simulation.mc_simulation module<a class="headerlink" href="#module-pydna_epbd.simulation.mc_simulation" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.mc_simulation.Simulation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.mc_simulation.</span></span><span class="sig-name descname"><span class="pre">Simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><span class="pre">DNA</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/mc_simulation.html#Simulation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.mc_simulation.Simulation" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Init Simulation object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dna</strong> (<a class="reference internal" href="#pydna_epbd.simulation.dna.DNA" title="pydna_epbd.simulation.dna.DNA"><em>DNA</em></a>) – A DNA object to run simulation on it.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.mc_simulation.Simulation.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">monitors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors" title="pydna_epbd.monitors.all_monitors.Monitors"><span class="pre">Monitors</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preheating_steps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/mc_simulation.html#Simulation.execute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.mc_simulation.Simulation.execute" title="Permalink to this definition">#</a></dt>
+<dd><p>Execute the simulation for total_steps (preheating+post_preheating).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>monitors</strong> (<a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors" title="pydna_epbd.monitors.all_monitors.Monitors"><em>Monitors</em></a>) – Record different aspects of MCMC simulation of pyDNA-EPBD model.</p></li>
+<li><p><strong>total_steps</strong> (<em>int</em>) – Preheating steps + Post preheating steps.</p></li>
+<li><p><strong>preheating_steps</strong> (<em>int</em>) – Number of preheating steps, when mostly monitors do not collect anything.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.mc_simulation.Simulation.init_temp">
+<span class="sig-name descname"><span class="pre">init_temp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/mc_simulation.html#Simulation.init_temp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.mc_simulation.Simulation.init_temp" title="Permalink to this definition">#</a></dt>
+<dd><p>Init simulation temperature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperature</strong> (<em>float</em>) – Temperature in Kelvin.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.mc_simulation.random">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.mc_simulation.</span></span><span class="sig-name descname"><span class="pre">random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">interval</span> <span class="pre">[0,</span> <span class="pre">1).</span></span></span><a class="headerlink" href="#pydna_epbd.simulation.mc_simulation.random" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pydna_epbd.simulation.simulation_steps">
+<span id="pydna-epbd-simulation-simulation-steps-module"></span><h2>pydna_epbd.simulation.simulation_steps module<a class="headerlink" href="#module-pydna_epbd.simulation.simulation_steps" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.simulation_steps.run_sequences">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.simulation_steps.</span></span><span class="sig-name descname"><span class="pre">run_sequences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequences</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_configs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/simulation_steps.html#run_sequences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.simulation_steps.run_sequences" title="Permalink to this definition">#</a></dt>
+<dd><p>Main function to run MCMC simulations for all DNA sequences. This initializes 100 or the number of available cpu cores-1 cpus
+to parallaly run n_iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequences</strong> (<em>list</em>) – List of tuples. Format: [(“seq_output_dir”, “seq_id”, “seq”)]</p></li>
+<li><p><strong>input_configs</strong> (<a class="reference internal" href="pydna_epbd.html#pydna_epbd.configs.InputConfigs" title="pydna_epbd.configs.InputConfigs"><em>InputConfigs</em></a>) – A InputConfigs object contaning all configurations.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.simulation.simulation_steps.run_single_iteration">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.simulation.simulation_steps.</span></span><span class="sig-name descname"><span class="pre">run_single_iteration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_preheating_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps_after_preheating</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iter_no</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/simulation/simulation_steps.html#run_single_iteration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.simulation.simulation_steps.run_single_iteration" title="Permalink to this definition">#</a></dt>
+<dd><p>This runs a single MCMC simulation iteration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_preheating_steps</strong> (<em>int</em>) – Number of preheating steps (from input config).</p></li>
+<li><p><strong>n_steps_after_preheating</strong> (<em>int</em>) – Number of post preheating steps (from input config).</p></li>
+<li><p><strong>seq_id</strong> (<em>str</em>) – Seq-id attached to each input sequence.</p></li>
+<li><p><strong>seq</strong> (<em>str</em>) – DNA sequence.</p></li>
+<li><p><strong>temp</strong> (<em>float</em>) – Temperature in Kelvin (from input config).</p></li>
+<li><p><strong>iter_no</strong> (<em>int</em>) – Iteration index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Monitors object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors" title="pydna_epbd.monitors.all_monitors.Monitors">Monitors</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.simulation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pydna_epbd.simulation" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pydna_epbd.monitors.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pydna_epbd.monitors package</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.aggregate_outputs_and_write">pydna_epbd.simulation.aggregate_outputs_and_write module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.constants">pydna_epbd.simulation.constants module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.dna">pydna_epbd.simulation.dna module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA"><code class="docutils literal notranslate"><span class="pre">DNA</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.dna.DNA.reset"><code class="docutils literal notranslate"><span class="pre">DNA.reset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.mc_simulation">pydna_epbd.simulation.mc_simulation module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.Simulation.execute"><code class="docutils literal notranslate"><span class="pre">Simulation.execute()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.Simulation.init_temp"><code class="docutils literal notranslate"><span class="pre">Simulation.init_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.mc_simulation.random"><code class="docutils literal notranslate"><span class="pre">random()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation.simulation_steps">pydna_epbd.simulation.simulation_steps module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.simulation_steps.run_sequences"><code class="docutils literal notranslate"><span class="pre">run_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.simulation.simulation_steps.run_single_iteration"><code class="docutils literal notranslate"><span class="pre">run_single_iteration()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.simulation">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Anowarul Kabir, Manish Bhattarai, Kim Rasmussen, Amarda Shehu, Anny Usheva, Alan Bishop and Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, LANL.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
