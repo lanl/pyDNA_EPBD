@@ -19,9 +19,15 @@
 # * Code style: ``cool_variable=42``
 
 make clean
-rm -rf ./source/modules
+rm -rf source/modules
 
 # a module directory must have __init__.py in the directory
-sphinx-apidoc -o ./source/modules ../pydna_epbd/
+sphinx-apidoc -o source/modules ../pydna_epbd/
 
 make html
+
+rm -rf ../docs/*
+touch ../docs/.nojekyll
+mv build/html/* ../docs/
+mv build/doctrees ../docs/
+rm -rf build
