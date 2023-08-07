@@ -45,7 +45,7 @@ coverage.xml
 *.log
 *.pot
 # Sphinx documentation
-docs/_build/
+# docs/_build/
 
 
 .vscode
@@ -56,4 +56,4 @@ deprecated/
 outputs/
 
 *.nf*
-docs/build*
+# docs/build*
