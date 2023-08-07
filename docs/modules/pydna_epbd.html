@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>pydna_epbd package &#8212; pyDNA-EPBD 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/pydna_epbd';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pydna_epbd.monitors package" href="pydna_epbd.monitors.html" />
+    <link rel="prev" title="pydna_epbd" href="modules.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">pyDNA-EPBD 1.0.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pydna_epbd</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">pydna_epbd package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html">pydna_epbd.monitors package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html">pydna_epbd.simulation package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/modules/pydna_epbd.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pydna_epbd package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.configs">pydna_epbd.configs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.configs.InputConfigs"><code class="docutils literal notranslate"><span class="pre">InputConfigs</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.input_reader">pydna_epbd.input_reader module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.input_reader.read_all_sequences"><code class="docutils literal notranslate"><span class="pre">read_all_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.input_reader.read_configurations"><code class="docutils literal notranslate"><span class="pre">read_configurations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.input_reader.read_sequences_from_a_file"><code class="docutils literal notranslate"><span class="pre">read_sequences_from_a_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.pickle_utils">pydna_epbd.pickle_utils module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.create_necessary_directories"><code class="docutils literal notranslate"><span class="pre">create_necessary_directories()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.get_dimension"><code class="docutils literal notranslate"><span class="pre">get_dimension()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.load_pickle"><code class="docutils literal notranslate"><span class="pre">load_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.save_as_pickle"><code class="docutils literal notranslate"><span class="pre">save_as_pickle()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.run">pydna_epbd.run module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.run.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.version">pydna_epbd.version module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd">Module contents</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pydna-epbd-package">
+<h1>pydna_epbd package<a class="headerlink" href="#pydna-epbd-package" title="Permalink to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pydna_epbd.monitors.html">pydna_epbd.monitors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.all_monitors">pydna_epbd.monitors.all_monitors module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors"><code class="docutils literal notranslate"><span class="pre">Monitors</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_iter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">Monitors.collect_at_step_preheat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.all_monitors.Monitors.update_state"><code class="docutils literal notranslate"><span class="pre">Monitors.update_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.bubble_monitor">pydna_epbd.monitors.bubble_monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.bubble_monitor.BubbleMonitor"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MAX_BUB_ELEM"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.MAX_BUB_ELEM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.MIN_BUB_ELEM"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.MIN_BUB_ELEM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLDS"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.TRESHOLDS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.TRESHOLD_SIZE"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.TRESHOLD_SIZE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.bubble_monitor.BubbleMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">BubbleMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.coord_monitor">pydna_epbd.monitors.coord_monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.coord_monitor.CoordMonitor"><code class="docutils literal notranslate"><span class="pre">CoordMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.coord_monitor.CoordMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">CoordMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.coord_monitor_verbose">pydna_epbd.monitors.coord_monitor_verbose module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.energy_monitor">pydna_epbd.monitors.energy_monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.energy_monitor.EnergyMonitor"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.energy_monitor.EnergyMonitor.KB"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.KB</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.collect_at_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.energy_monitor.EnergyMonitor.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">EnergyMonitor.collect_at_step_preheat()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.flipping_monitor">pydna_epbd.monitors.flipping_monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor.FlippingMonitor"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.FLIP_CUTOFF"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor.FLIP_CUTOFF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor.FlippingMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">FlippingMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.flipping_monitor_verbose">pydna_epbd.monitors.flipping_monitor_verbose module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_CUTOFF"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.FLIP_CUTOFF</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.FLIP_SIZES"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.FLIP_SIZES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.flipping_monitor_verbose.FlippingMonitorVerbose.collect_at_step"><code class="docutils literal notranslate"><span class="pre">FlippingMonitorVerbose.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.melting_and_fraction_many_monitor">pydna_epbd.monitors.melting_and_fraction_many_monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_SIZES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_TIME_STEPS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.MELT_FRACTION_TRESHOLDS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_many_monitor.MeltingAndFractionManyMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionManyMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.melting_and_fraction_monitor">pydna_epbd.monitors.melting_and_fraction_monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.MELT_FRACTION_TRESHOLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.collect_at_iter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.melting_and_fraction_monitor.MeltingAndFractionMonitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">MeltingAndFractionMonitor.collect_at_step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors.monitor">pydna_epbd.monitors.monitor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.monitor.Monitor"><code class="docutils literal notranslate"><span class="pre">Monitor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.monitor.Monitor.collect_at_iter"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_iter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.monitor.Monitor.collect_at_step"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.monitor.Monitor.collect_at_step_preheat"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_step_preheat()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.monitor.Monitor.collect_at_temp"><code class="docutils literal notranslate"><span class="pre">Monitor.collect_at_temp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.monitors.html#pydna_epbd.monitors.monitor.Monitor.update_state"><code class="docutils literal notranslate"><span class="pre">Monitor.update_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.monitors.html#module-pydna_epbd.monitors">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pydna_epbd.simulation.html">pydna_epbd.simulation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#module-pydna_epbd.simulation.aggregate_outputs_and_write">pydna_epbd.simulation.aggregate_outputs_and_write module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.aggregate_outputs_and_write.aggregate_outputs_for_single_temp"><code class="docutils literal notranslate"><span class="pre">aggregate_outputs_for_single_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#module-pydna_epbd.simulation.constants">pydna_epbd.simulation.constants module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#module-pydna_epbd.simulation.dna">pydna_epbd.simulation.dna module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA"><code class="docutils literal notranslate"><span class="pre">DNA</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.dna.DNA.reset"><code class="docutils literal notranslate"><span class="pre">DNA.reset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#module-pydna_epbd.simulation.mc_simulation">pydna_epbd.simulation.mc_simulation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.mc_simulation.Simulation"><code class="docutils literal notranslate"><span class="pre">Simulation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.mc_simulation.Simulation.execute"><code class="docutils literal notranslate"><span class="pre">Simulation.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.mc_simulation.Simulation.init_temp"><code class="docutils literal notranslate"><span class="pre">Simulation.init_temp()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.mc_simulation.random"><code class="docutils literal notranslate"><span class="pre">random()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#module-pydna_epbd.simulation.simulation_steps">pydna_epbd.simulation.simulation_steps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.simulation_steps.run_sequences"><code class="docutils literal notranslate"><span class="pre">run_sequences()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pydna_epbd.simulation.html#pydna_epbd.simulation.simulation_steps.run_single_iteration"><code class="docutils literal notranslate"><span class="pre">run_single_iteration()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pydna_epbd.simulation.html#module-pydna_epbd.simulation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pydna_epbd.configs">
+<span id="pydna-epbd-configs-module"></span><h2>pydna_epbd.configs module<a class="headerlink" href="#module-pydna_epbd.configs" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pydna_epbd.configs.InputConfigs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pydna_epbd.configs.</span></span><span class="sig-name descname"><span class="pre">InputConfigs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequences</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iterations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_preheating_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps_after_preheating</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_full</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_runtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/configs.html#InputConfigs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.configs.InputConfigs" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This initializes an input configuration object to use throughout the simulation process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>temperature</strong> (<em>float</em>) – In Kelvin scale.</p></li>
+<li><p><strong>sequences</strong> (<em>list</em>) – List of tuples of sequences in [(“output_dir”, “seq_id”, “seq”)] format</p></li>
+<li><p><strong>outputs_dir</strong> (<em>str</em>) – The directory path to save the simulation outputs.</p></li>
+<li><p><strong>n_iterations</strong> (<em>int</em>) – The number of independent iterations with different initial conditions.</p></li>
+<li><p><strong>n_preheating_steps</strong> (<em>int</em>) – The number of preheating steps.</p></li>
+<li><p><strong>n_steps_after_preheating</strong> (<em>int</em>) – The number of post preheating steps.</p></li>
+<li><p><strong>n_nodes</strong> (<em>int</em>) – The computing nodes where the input sequences are divided equally for faster execution of bulk sequences.</p></li>
+<li><p><strong>save_full</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not save the full outputs of the simulation. If True, first axis denotes n_iterations. Defaults to False.</p></li>
+<li><p><strong>save_runtime</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not save the runtime for each sequence. Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.input_reader">
+<span id="pydna-epbd-input-reader-module"></span><h2>pydna_epbd.input_reader module<a class="headerlink" href="#module-pydna_epbd.input_reader" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.input_reader.read_all_sequences">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.input_reader.</span></span><span class="sig-name descname"><span class="pre">read_all_sequences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_seqs_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_first_col_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flanks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/input_reader.html#read_all_sequences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.input_reader.read_all_sequences" title="Permalink to this definition">#</a></dt>
+<dd><p>Read all sequences for the simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_seqs_dir</strong> (<em>str</em>) – Directory that contains files containing DNA sequences.</p></li>
+<li><p><strong>is_first_col_id</strong> (<em>bool</em>) – Whether or not the first column of the sequence containing file determines sequence id.</p></li>
+<li><p><strong>flanks</strong> (<em>str</em>) – Flanks are added at both sides of all input sequences.</p></li>
+<li><p><strong>outputs_dir</strong> (<em>str</em>) – The output directory for saving simulation outputs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list containing all sequences in the input directory.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.input_reader.read_configurations">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.input_reader.</span></span><span class="sig-name descname"><span class="pre">read_configurations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">configuration_filepath</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/input_reader.html#read_configurations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.input_reader.read_configurations" title="Permalink to this definition">#</a></dt>
+<dd><p>Read the configs from the input configuration file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>configuration_filepath</strong> (<em>str</em>) – The configurations needed to run MCMC simulations.
+The structure of the configs are given in the Readme file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The class containing specific format for running the simulations.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#pydna_epbd.configs.InputConfigs" title="pydna_epbd.configs.InputConfigs">InputConfigs</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.input_reader.read_sequences_from_a_file">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.input_reader.</span></span><span class="sig-name descname"><span class="pre">read_sequences_from_a_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_seqs_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_with_ext</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_first_col_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flanks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outputs_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/input_reader.html#read_sequences_from_a_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.input_reader.read_sequences_from_a_file" title="Permalink to this definition">#</a></dt>
+<dd><p>Read DNA sequences from one input file. This also creates output directories for saving simulation outputs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_seqs_dir</strong> (<em>str</em>) – Directory that contains DNA sequences file.</p></li>
+<li><p><strong>filename_with_ext</strong> (<em>str</em>) – Filename with extension.</p></li>
+<li><p><strong>is_first_col_id</strong> (<em>bool</em>) – Whether or not the first column of the sequence containing file determines sequence id.</p></li>
+<li><p><strong>flanks</strong> (<em>str</em>) – Flanks are added at both sides of all input sequences.</p></li>
+<li><p><strong>outputs_dir</strong> (<em>str</em>) – The output directory for saving simulation outputs.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of tuples containing all sequences in the input sequence file with seq-id and output directory.
+If seq-id is not present, 1-indexed incrementally generated seq-id will be attached.
+Format: [(“seq_output_dir”, “seq_id”, “seq”)]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-pydna_epbd.pickle_utils">
+<span id="pydna-epbd-pickle-utils-module"></span><h2>pydna_epbd.pickle_utils module<a class="headerlink" href="#module-pydna_epbd.pickle_utils" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.pickle_utils.create_necessary_directories">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.pickle_utils.</span></span><span class="sig-name descname"><span class="pre">create_necessary_directories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/pickle_utils.html#create_necessary_directories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.pickle_utils.create_necessary_directories" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.pickle_utils.get_dimension">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.pickle_utils.</span></span><span class="sig-name descname"><span class="pre">get_dimension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/pickle_utils.html#get_dimension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.pickle_utils.get_dimension" title="Permalink to this definition">#</a></dt>
+<dd><p>given a list (of lists) compute the dimension</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.pickle_utils.load_pickle">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.pickle_utils.</span></span><span class="sig-name descname"><span class="pre">load_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/pickle_utils.html#load_pickle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.pickle_utils.load_pickle" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.pickle_utils.save_as_pickle">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.pickle_utils.</span></span><span class="sig-name descname"><span class="pre">save_as_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/pickle_utils.html#save_as_pickle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.pickle_utils.save_as_pickle" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pydna_epbd.run">
+<span id="pydna-epbd-run-module"></span><h2>pydna_epbd.run module<a class="headerlink" href="#module-pydna_epbd.run" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pydna_epbd.run.parse_args">
+<span class="sig-prename descclassname"><span class="pre">pydna_epbd.run.</span></span><span class="sig-name descname"><span class="pre">parse_args</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pydna_epbd/run.html#parse_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pydna_epbd.run.parse_args" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-pydna_epbd.version">
+<span id="pydna-epbd-version-module"></span><h2>pydna_epbd.version module<a class="headerlink" href="#module-pydna_epbd.version" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pydna_epbd">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pydna_epbd" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pydna_epbd</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pydna_epbd.monitors.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pydna_epbd.monitors package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.configs">pydna_epbd.configs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.configs.InputConfigs"><code class="docutils literal notranslate"><span class="pre">InputConfigs</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.input_reader">pydna_epbd.input_reader module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.input_reader.read_all_sequences"><code class="docutils literal notranslate"><span class="pre">read_all_sequences()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.input_reader.read_configurations"><code class="docutils literal notranslate"><span class="pre">read_configurations()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.input_reader.read_sequences_from_a_file"><code class="docutils literal notranslate"><span class="pre">read_sequences_from_a_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.pickle_utils">pydna_epbd.pickle_utils module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.create_necessary_directories"><code class="docutils literal notranslate"><span class="pre">create_necessary_directories()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.get_dimension"><code class="docutils literal notranslate"><span class="pre">get_dimension()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.load_pickle"><code class="docutils literal notranslate"><span class="pre">load_pickle()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.pickle_utils.save_as_pickle"><code class="docutils literal notranslate"><span class="pre">save_as_pickle()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.run">pydna_epbd.run module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pydna_epbd.run.parse_args"><code class="docutils literal notranslate"><span class="pre">parse_args()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd.version">pydna_epbd.version module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pydna_epbd">Module contents</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Anowarul Kabir, Manish Bhattarai, Kim Rasmussen, Amarda Shehu, Anny Usheva, Alan Bishop and Boian Alexandrov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, LANL.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

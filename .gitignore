@@ -56,4 +56,4 @@ deprecated/
 outputs/
 
 *.nf*
-docs/build*
+docs/*
