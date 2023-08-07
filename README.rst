@@ -8,6 +8,10 @@ Welcome to pyDNA-EPBD's documentation!
 This repository corresponds to the article titled as **pyDNA-EPBD: A Python-based Implementation of the Extended Peyrard-Bishop-Dauxois Model for DNA Breathing Dynamics Simulation**.
 
 
+.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.8222805.svg
+   :target: https://doi.org/10.5281/zenodo.8222805
+
+
 .. figure:: plots/mcmc_algorithm.png
     :width: 50%
     :align: center
