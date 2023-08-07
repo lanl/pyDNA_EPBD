@@ -2,22 +2,7 @@
    sphinx-quickstart on Mon Jul 31 12:21:40 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-
-
-.. |pic2| image:: ../../plots/Bubbles.png
-   :width: 45%
-
-.. |pic5| image:: ../../plots/P5_flips.png
-   :width: 45%
-
-.. |pic6| image:: ../../plots/P5_qfactors.png
-   :width: 45%
-
-.. |pic7| image:: ../../plots/svr_rbf_perf_comparison_selex.png
-   :width: 45%
-
-.. |pic8| image:: ../../plots/88seqs_seqlen_vs_runtime.png
-   :width: 45%    
+ 
 
 Welcome to pyDNA-EPBD's documentation!
 ======================================
@@ -37,6 +22,7 @@ Resources
 ========================================
 * `Paper <https://tobeprovided>`_
 * `Code <https://github.com/lanl/pyDNA_EPBD>`_
+* `Documentation <https://lanl.github.io/pyDNA_EPBD/>`_
 * `Analysis Notebooks <https://github.com/lanl/pyDNA_EPBD/tree/main/analysis>`_
 * `Utility of ML models <https://github.com/lanl/pyDNA_EPBD/tree/main/models>`_
 * `Example Runs <https://github.com/lanl/pyDNA_EPBD/tree/main/examples>`_ 
@@ -54,12 +40,10 @@ Installation
 
       # Run your first pyDNA-EPBD simulation. 
       # This will generate P5 wild and mutant sequence breathing dynamics in the "outputs" directory.
-      python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
+      python -m pydna_epbd.run --config_filepath examples/p5/configs.txt
 
       # The other libraries to analyze the DNA breathing dynamics can be installed using the following command:
-      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn -y
-      # The above libraries can be dependent on the following system environments.  
-      sudo apt install libopenblas-dev  pkg-config libopenblas64-dev pypy-dev
+      conda install -c conda-forge scikit-learn scipy pandas matplotlib seaborn jupyterlab -y
 
       # To deactivate and remove the venv
       conda deactivate
@@ -84,7 +68,7 @@ Configuration file structure
 ========================================================
 The simulation requires a configuration filepath. The structure of a configuration file is follows:
 
-.. list-table:: Configuration file structure
+.. list-table::
    :widths: 20 10 70
    :header-rows: 1
 
@@ -179,13 +163,17 @@ The input P5 DNA sequences (`examples/p5/p5_seqs/p5_wt_mt.txt <https://github.co
 
 Example Usage
 ========================================
-**Option 1: Using single computing node:**
+`Here <https://lanl.github.io/pyDNA_EPBD/>`_ we provide the full documentation of the modules and packages. 
+However, this section describes three easy-to-go options to run the MCMC simulation directly on DNA sequences.
+
+**Option 1 - Using python script:**
+This uses single computing node.
 
 .. code-block:: console
-      
-      python pydna_epbd/run.py --config_filepath examples/p5/configs.txt
 
-**Option 2: Using multiple computing nodes (SLURM):**
+      python -m pydna_epbd.run --config_filepath examples/p5/configs.txt
+
+**Option 2 - Using multiple computing nodes (SLURM):**
 To avail multiple nodes, we suggest to define *--array* variable in a SLURM script:
 
 .. code-block:: console
@@ -199,9 +187,44 @@ Then, *ComputingNodes* variable in the confiuration file should be the total num
       ComputingNodes = 6
 
 Now all the input DNA sequences will be divided into Six chunks to run independently in six computational nodes.
-
 Example SLURM script is given `here <https://github.com/lanl/pyDNA_EPBD/blob/main/examples/p5/chicoma_job.sh>`_ for P5.
-Both options will generate outputs in the *outputs* directory.
+
+
+**Option 3 - Defining own python script:**
+A user can define own python script and run the simulation. An example python script is given below:
+
+.. code-block:: python
+      
+      import os
+      import math
+
+      from pydna_epbd.input_reader import read_configurations
+      from pydna_epbd.simulation.simulation_steps import run_sequences
+
+      if __name__ == "__main__":
+          """This runs the simulation."""
+
+          job_idx = 0
+
+          # array job
+          if "SLURM_ARRAY_TASK_ID" in os.environ:
+              job_idx = int(os.environ["SLURM_ARRAY_TASK_ID"])
+
+          input_configs = read_configurations("examples/p5/configs.txt")
+
+          # dividing the input sequences to the nodes based on job-idx
+          chunk_size = math.ceil(len(input_configs.sequences) / input_configs.n_nodes)
+          sequence_chunks = [
+              input_configs.sequences[x : x + chunk_size]
+              for x in range(0, len(input_configs.sequences), chunk_size)
+          ]
+          sequences = sequence_chunks[job_idx]
+          print(f"job_idx:{job_idx}, n_seqs:{len(sequences)}")
+
+          run_sequences(sequences, input_configs)
+
+
+The above options will generate outputs in the *outputs* directory. The average coordinate and flipping profiles are plotted below.
 
 .. |a| image:: ../../plots/p5_wtmt_avg_coord.png
 .. |b| image:: ../../plots/p5_wtmt_avg_flip_1.414213562373096.png
@@ -217,16 +240,43 @@ Both options will generate outputs in the *outputs* directory.
 
 Results
 ==================
+Here we also provide the other results for quick reference.
 
-  
+.. figure:: ../../plots/Bubbles.png
+   :width: 60%
+   :align: center
+
+   Figure 4: Overview of Bubble Tensor for P5 wild type and mutant type for different thresholds.
+
+.. |P5_flips| image:: ../../plots/P5_flips.png
+   :width: 45%
+
+.. |P5_qfactors| image:: ../../plots/P5_qfactors.png
+   :width: 45%
+
+|P5_flips| |P5_qfactors|
+
+Figure 5: P5 Q-factor analysis.
+
+.. figure:: ../../plots/svr_rbf_perf_comparison_selex.png
+   :width: 55%
+   :align: center
+   
+   Figure 6: Utility of breating characeristics on TF binding specificity for selex data.
+
+.. figure:: ../../plots/88seqs_seqlen_vs_runtime.png
+   :width: 45%     
+   :align: center
+   
+   Figure 7: Scalability analysis.
 
 Acknowledgments
 ========================================
-
+Los Alamos National Lab (LANL), T-1
 
 Copyright Notice
 ========================================
-
+© (or copyright) 2023. Triad National Security, LLC. All rights reserved. This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S. Department of Energy/National Nuclear Security Administration. All rights in the program are reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear Security Administration. The Government is granted for itself and others acting on its behalf a nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare derivative works, distribute copies to the public, perform publicly and display publicly, and to permit others to do so.
 
 License
 ========================================
@@ -256,6 +306,7 @@ WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
 Documentation
 ==================
 .. toctree::
@@ -269,8 +320,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-
 
 Authors
 ========================================
