@@ -241,7 +241,18 @@ The above options will generate outputs in the *outputs* directory. The average 
    * - |a|
      - |b|
 
+To run simulation on other dataset
+=======================================
+.. code-block:: console
+    
+    unzip data/pydna_epbd_data.zip -d data
+    python pydna_epbd.run --config_filepath examples/86_seqs/configs.txt
+    python pydna_epbd.run --config_filepath examples/gcpbm/configs.txt
+    python pydna_epbd.run --config_filepath examples/p5/configs.txt
+    python pydna_epbd.run --config_filepath examples/qfactor/configs.txt
+    python pydna_epbd.run --config_filepath examples/selex/configs.txt
 
+    
 Results
 =======================
 Here we also provide the other results for quick reference.

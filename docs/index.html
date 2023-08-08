@@ -283,6 +283,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file-structure">Configuration file structure</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-configurations-and-p5-dna-sequences">Example Configurations and P5 DNA sequences</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-run-simulation-on-other-dataset">To run simulation on other dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#copyright-notice">Copyright Notice</a></li>
@@ -551,6 +552,17 @@ A user can define own python script and run the simulation. An example python sc
 </tbody>
 </table>
 </section>
+<section id="to-run-simulation-on-other-dataset">
+<h1>To run simulation on other dataset<a class="headerlink" href="#to-run-simulation-on-other-dataset" title="Permalink to this heading">#</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">unzip data/pydna_epbd_data.zip -d data</span>
+<span class="go">python pydna_epbd.run --config_filepath examples/86_seqs/configs.txt</span>
+<span class="go">python pydna_epbd.run --config_filepath examples/gcpbm/configs.txt</span>
+<span class="go">python pydna_epbd.run --config_filepath examples/p5/configs.txt</span>
+<span class="go">python pydna_epbd.run --config_filepath examples/qfactor/configs.txt</span>
+<span class="go">python pydna_epbd.run --config_filepath examples/selex/configs.txt</span>
+</pre></div>
+</div>
+</section>
 <section id="results">
 <h1>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h1>
 <p>Here we also provide the other results for quick reference.</p>
@@ -737,6 +749,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#configuration-file-structure">Configuration file structure</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-configurations-and-p5-dna-sequences">Example Configurations and P5 DNA sequences</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#example-usage">Example Usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#to-run-simulation-on-other-dataset">To run simulation on other dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgments">Acknowledgments</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#copyright-notice">Copyright Notice</a></li>

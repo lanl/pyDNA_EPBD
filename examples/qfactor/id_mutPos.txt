@@ -1,0 +1,9 @@
+id zero_indexed_mut_position tfb_or_ctrl
+P5 50 tfb
+rs3823752 100 tfb
+rs12946510 100 tfb
+rs1108842 100 tfb
+rs2299319 100 ctrl
+rs72692900 100 ctrl
+rs7612511 100 ctrl
+rs72974222 100 ctrl

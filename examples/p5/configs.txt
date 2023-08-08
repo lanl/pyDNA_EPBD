@@ -1,7 +1,7 @@
 IsFirstColumnId = Yes
 SaveFull = No
 SaveRuntime = No
-SequencesDir = examples/p5/p5_seqs/
+SequencesDir = data/p5/
 OutputsDir = outputs/
 Flanks = None
 Temperature = 310
