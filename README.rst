@@ -23,7 +23,7 @@ To address this, we have developed **pyDNA-EPBD**, a Python-based software tool 
 
 Resources
 ========================================
-* `Paper <https://tobeprovided>`_
+* `Paper <https://www.biorxiv.org/content/10.1101/2023.09.09.557010v1>`_
 * `Code <https://github.com/lanl/pyDNA_EPBD>`_
 * `Documentation <https://lanl.github.io/pyDNA_EPBD/>`_
 * `Analysis Notebooks <https://github.com/lanl/pyDNA_EPBD/tree/main/analysis>`_
