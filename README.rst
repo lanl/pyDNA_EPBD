@@ -37,8 +37,8 @@ Installation
       
       git clone https://github.com/lanl/pyDNA_EPBD.git
       cd pyDNA_EPBD
-      conda create -c conda-forge --name pydnaepbd_pypy39_conda pypy python=3.9 -y
-      conda activate pydnaepbd_pypy39_conda
+      conda create -c conda-forge --name pydnaepbd_pypy_conda pypy -y
+      conda activate pydnaepbd_pypy_conda
       python setup.py install
 
       # Run your first pyDNA-EPBD simulation. 
@@ -50,7 +50,7 @@ Installation
 
       # To deactivate and remove the venv
       conda deactivate
-      conda remove --name pydnaepbd_pypy39_conda --all -y
+      conda remove --name pydnaepbd_pypy_conda --all -y
 
 Prerequisites
 ========================================
