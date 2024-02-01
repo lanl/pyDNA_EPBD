@@ -356,5 +356,22 @@ How to Cite pyDNA-EPBD?
       url          = {https://doi.org/10.5281/zenodo.8222805}
       }
 
+How to Cite gcPBM and HT-SELEX dataset?
+========================================
 
+.. code-block:: console
 
+   @article{htselex-and-gcpbm-data,
+     title = {Expanding the repertoire of DNA shape features for genome-scale studies of transcription factor binding},
+     volume = {45},
+     ISSN = {1362-4962},
+     url = {http://dx.doi.org/10.1093/nar/gkx1145},
+     DOI = {10.1093/nar/gkx1145},
+     number = {22},
+     journal = {Nucleic Acids Research},
+     publisher = {Oxford University Press (OUP)},
+     author = {Li,  Jinsen and Sagendorf,  Jared M. and Chiu,  Tsu-Pei and Pasi,  Marco and Perez,  Alberto and Rohs,  Remo},
+     year = {2017},
+     month = nov,
+     pages = {12877–12887}
+   }
