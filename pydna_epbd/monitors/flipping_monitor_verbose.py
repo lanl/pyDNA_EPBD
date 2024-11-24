@@ -16,9 +16,7 @@ class FlippingMonitorVerbose(Monitor):
             dna (DNA): A DNA object.
         """
         super(FlippingMonitorVerbose, self).__init__(dna)
-        self.flip = [
-            [0.0] * self.FLIP_SIZES for i in range(self.dna.n_nt_bases)
-        ]  # shape=(n_nt_bases, FLIP_SIZE)
+        self.flip = [[0.0] * self.FLIP_SIZES for i in range(self.dna.n_nt_bases)]  # shape=(n_nt_bases, FLIP_SIZE)
 
     def collect_at_step(self, step_no):
         """Collects flipping characteristics considering different thresholds.

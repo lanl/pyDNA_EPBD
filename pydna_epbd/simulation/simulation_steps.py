@@ -1,11 +1,13 @@
+import os, time
 from pydna_epbd.simulation.dna import DNA
 from pydna_epbd.simulation.mc_simulation import Simulation
 from pydna_epbd.monitors.all_monitors import Monitors
+from pydna_epbd.simulation.aggregate_outputs_and_write import aggregate_outputs_for_single_temp
+from joblib import delayed, Parallel
+import pydna_epbd.pickle_utils as utils
 
 
-def run_single_iteration(
-    n_preheating_steps, n_steps_after_preheating, seq_id, seq, temp, iter_no
-):
+def run_single_iteration(n_preheating_steps, n_steps_after_preheating, seq_id, seq, temp, iter_no):
     """This runs a single MCMC simulation iteration.
 
     Args:
@@ -38,13 +40,6 @@ def run_single_iteration(
     return monitors
 
 
-import os, time
-from pydna_epbd.simulation.aggregate_outputs_and_write import (
-    aggregate_outputs_for_single_temp,
-)
-from joblib import delayed, Parallel
-
-
 def run_sequences(sequences, input_configs):
     """Main function to run MCMC simulations for all DNA sequences. This initializes 100 or the number of available cpu cores-1 cpus
     to parallaly run n_iterations.
@@ -59,44 +54,44 @@ def run_sequences(sequences, input_configs):
         runtime_write_mode = "a" if os.path.exists(runtime_filepath) else "w"
         runtime_out_handle = open(runtime_filepath, runtime_write_mode)
 
-    with Parallel(n_jobs=min(100, os.cpu_count() - 1), verbose=1) as parallel:
+    with Parallel(n_jobs=os.cpu_count() - 3, verbose=1) as parallel:  # min(100, os.cpu_count() - 1)
         for i in range(0, len(sequences)):
             seq_output_dir, seq_id, seq = sequences[i]
             simulation_out_filepath = f"{seq_output_dir}{seq_id}.pkl"
 
+            # checking whether the simulation is run previously for this seq_id and output is correct
             if os.path.exists(simulation_out_filepath):
-                print("Already computed:", simulation_out_filepath)
-                continue
-            else:
-                k = 0
-                # for k in range(10): # for 10 runs to do runtime analysis
+                try:
+                    x = utils.load_pickle(simulation_out_filepath)
+                    print("Already computed:", simulation_out_filepath)
+                    continue
+                except Exception as e:
+                    print(f"Previously computed '{simulation_out_filepath}' had issues, computing again ... ")
+                    # raise e
+            # else:
+            k = 0
+            # for k in range(10): # for 10 runs to do runtime analysis
 
-                print(f"Running simulation: seq_idx:{i} | seq_id:{seq_id}")
-                start_time = time.time()
+            print(f"Running simulation: seq_idx:{i} | seq_id:{seq_id}")
+            start_time = time.time()
 
-                list_of_monitors = parallel(
-                    delayed(run_single_iteration)(
-                        input_configs.n_preheating_steps,
-                        input_configs.n_steps_after_preheating,
-                        seq_id,
-                        seq,
-                        input_configs.temperature,
-                        iter_no,
-                    )
-                    for iter_no in range(input_configs.n_iterations)
+            list_of_monitors = parallel(
+                delayed(run_single_iteration)(
+                    input_configs.n_preheating_steps, input_configs.n_steps_after_preheating, seq_id, seq, input_configs.temperature, iter_no
                 )
-                aggregate_outputs_for_single_temp(
-                    list_of_monitors, input_configs, simulation_out_filepath
-                )
+                for iter_no in range(input_configs.n_iterations)
+            )
 
-                runtime = time.time() - start_time
-                print(
-                    f"finished -> {simulation_out_filepath} -> {runtime} seconds to execute"
-                )
-                if input_configs.save_runtime:
-                    runtime_out_handle.write(
-                        f"{k}:{simulation_out_filepath}:{runtime}\n"
-                    )
+            assert (
+                len(list_of_monitors) == input_configs.n_iterations
+            ), f"Should be equal, but found {len(list_of_monitors)} != {input_configs.n_iterations}"  # synchronization barrier
+
+            aggregate_outputs_for_single_temp(list_of_monitors, input_configs, simulation_out_filepath)
+
+            runtime = time.time() - start_time
+            print(f"finished -> {simulation_out_filepath} -> {runtime} seconds to execute")
+            if input_configs.save_runtime:
+                runtime_out_handle.write(f"{k}:{simulation_out_filepath}:{runtime}\n")
 
             # break # to run 1st seq, comment-out this line
     if input_configs.save_runtime:

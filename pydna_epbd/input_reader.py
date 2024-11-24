@@ -2,9 +2,7 @@ import os
 from pydna_epbd.configs import InputConfigs
 
 
-def read_sequences_from_a_file(
-    input_seqs_dir, filename_with_ext, is_first_col_id, flanks, outputs_dir
-):
+def read_sequences_from_a_file(input_seqs_dir, filename_with_ext, is_first_col_id, flanks, outputs_dir):
     """Read DNA sequences from one input file. This also creates output directories for saving simulation outputs.
 
     Args:
@@ -56,9 +54,7 @@ def read_all_sequences(input_seqs_dir, is_first_col_id, flanks, outputs_dir):
     all_seqs = []
     total_num_of_bps = 0
     for i, filename_with_ext in enumerate(os.listdir(input_seqs_dir)):
-        seqs = read_sequences_from_a_file(
-            input_seqs_dir, filename_with_ext, is_first_col_id, flanks, outputs_dir
-        )
+        seqs = read_sequences_from_a_file(input_seqs_dir, filename_with_ext, is_first_col_id, flanks, outputs_dir)
         all_seqs += seqs
 
         n_bps = len(seqs[0][2]) - (2 * len(flanks))
@@ -110,9 +106,7 @@ def read_configurations(configuration_filepath):
     os.environ["FLIPPING_MONITOR"] = configs["FlippingMonitor"]
     os.environ["ENERGY_MONITOR"] = configs["EnergyMonitor"]
     os.environ["MELTING_AND_FRACTION_MONITOR"] = configs["MeltingAndFractionMonitor"]
-    os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] = configs[
-        "MeltingAndFractionManyMonitor"
-    ]
+    os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] = configs["MeltingAndFractionManyMonitor"]
 
     # reading sequences and creating outputs directory
     sequences = read_all_sequences(input_seqs_dir, is_first_col_id, flanks, outputs_dir)

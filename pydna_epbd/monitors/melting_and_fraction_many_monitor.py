@@ -9,16 +9,12 @@ class MeltingAndFractionManyMonitor(Monitor):
     in between [0.5, 2.5) Angstrom with step size 0.1.
     """
 
-    MELT_FRACTION_TRESHOLDS = [
-        i / 10 for i in range(5, 25)
-    ]  # start=0.5, end=2.5, step=0.1
+    MELT_FRACTION_TRESHOLDS = [i / 10 for i in range(5, 25)]  # start=0.5, end=2.5, step=0.1
     MELT_FRACTION_SIZES = len(MELT_FRACTION_TRESHOLDS)
 
     # MELT_FRACTION_TIME_STEP = 800
     # MELT_FRACTION_MAX_STEPS = 80000
-    MELT_FRACTION_TIME_STEPS = (
-        100  # int(MELT_FRACTION_MAX_STEPS/MELT_FRACTION_TIME_STEP) # 100
-    )
+    MELT_FRACTION_TIME_STEPS = 100  # int(MELT_FRACTION_MAX_STEPS/MELT_FRACTION_TIME_STEP) # 100
 
     def __init__(self, dna, n_preheating_steps) -> None:
         """Initialize MeltingAndFractionManyMonitor object.
@@ -33,12 +29,10 @@ class MeltingAndFractionManyMonitor(Monitor):
 
         self.melting_fraction_many = [0.0] * self.dna.n_nt_bases
         self.melting_many = [
-            [0.0] * self.MELT_FRACTION_SIZES
-            for i in range(self.MELT_FRACTION_TIME_STEPS)
+            [0.0] * self.MELT_FRACTION_SIZES for i in range(self.MELT_FRACTION_TIME_STEPS)
         ]  # shape=(MELT_FRACTION_TIME_STEPS, MELT_FRACTION_SIZES)
         self.fraction_many = [
-            [0.0] * self.MELT_FRACTION_SIZES
-            for i in range(self.MELT_FRACTION_TIME_STEPS)
+            [0.0] * self.MELT_FRACTION_SIZES for i in range(self.MELT_FRACTION_TIME_STEPS)
         ]  # shape=(MELT_FRACTION_TIME_STEPS, MELT_FRACTION_SIZES)
 
     def collect_at_step(self, step_no):
@@ -61,18 +55,11 @@ class MeltingAndFractionManyMonitor(Monitor):
             melting, fraction = 1.0, 0.0
 
             for base_idx in range(self.dna.n_nt_bases):
-                if (
-                    melting == 1.0
-                    and self.melting_fraction_many[base_idx] / (step + 1)
-                    < self.MELT_FRACTION_TRESHOLDS[thresh_idx]
-                ):
+                if melting == 1.0 and self.melting_fraction_many[base_idx] / (step + 1) < self.MELT_FRACTION_TRESHOLDS[thresh_idx]:
                     melting = 0.0
                     break
 
-                if (
-                    self.melting_fraction_many[base_idx] / (step + 1)
-                    > self.MELT_FRACTION_TRESHOLDS[thresh_idx]
-                ):
+                if self.melting_fraction_many[base_idx] / (step + 1) > self.MELT_FRACTION_TRESHOLDS[thresh_idx]:
                     fraction += 1  # computing total fraction length for this threshold
 
             self.melting_many[time_step][thresh_idx] += melting

@@ -22,9 +22,7 @@ class EnergyMonitor(Monitor):
         Args:
             step_no (int): Step number.
         """
-        temp = self.dna.total_energy / (
-            self.KB * self.dna.n_nt_bases
-        )  # computing temperature from energy
+        temp = self.dna.total_energy / (self.KB * self.dna.n_nt_bases)  # computing temperature from energy
         self.energy[step_no] += temp
 
     def collect_at_step_preheat(self, step_no):

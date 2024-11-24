@@ -29,9 +29,7 @@ class DNA:
 
         self.DA, self.kn = self.__init_stacking_terms()
         self.kn_div_four = [i * 0.25 for i in self.kn]
-        self.DA_div_sqrt_two = [
-            [j * one_div_sqrt2 for j in self.DA[i]] for i in range(self.n_nt_bases)
-        ]
+        self.DA_div_sqrt_two = [[j * one_div_sqrt2 for j in self.DA[i]] for i in range(self.n_nt_bases)]
 
     def __init_coords(self):
         """Private method for initializing coordinates (u (left) and v (right) bases).

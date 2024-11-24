@@ -32,10 +32,7 @@ if __name__ == "__main__":
 
     # dividing the input sequences to the nodes based on job-idx
     chunk_size = math.ceil(len(input_configs.sequences) / input_configs.n_nodes)
-    sequence_chunks = [
-        input_configs.sequences[x : x + chunk_size]
-        for x in range(0, len(input_configs.sequences), chunk_size)
-    ]
+    sequence_chunks = [input_configs.sequences[x : x + chunk_size] for x in range(0, len(input_configs.sequences), chunk_size)]
     sequences = sequence_chunks[job_idx]
     print(f"job_idx:{job_idx}, n_seqs:{len(sequences)}")
 

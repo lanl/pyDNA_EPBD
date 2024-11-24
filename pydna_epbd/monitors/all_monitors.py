@@ -47,15 +47,11 @@ class Monitors:
             self.monitors.append(self.energy_monitor)
 
         if os.environ["MELTING_AND_FRACTION_MONITOR"] == "On":
-            self.melting_and_fraction_monitor = MeltingAndFractionMonitor(
-                dna, n_steps_after_preheating
-            )
+            self.melting_and_fraction_monitor = MeltingAndFractionMonitor(dna, n_steps_after_preheating)
             self.monitors.append(self.melting_and_fraction_monitor)
 
         if os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] == "On":
-            self.melting_and_fraction_many_monitor = MeltingAndFractionManyMonitor(
-                dna, n_preheating_steps
-            )
+            self.melting_and_fraction_many_monitor = MeltingAndFractionManyMonitor(dna, n_preheating_steps)
             self.monitors.append(self.melting_and_fraction_many_monitor)
 
         # if os.environ['COORD_VERBOSE_MONITOR'] == 'True':

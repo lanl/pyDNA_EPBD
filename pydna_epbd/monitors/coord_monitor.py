@@ -12,7 +12,7 @@ class CoordMonitor(Monitor):
         """
         super(CoordMonitor, self).__init__(dna)
         self.coord = [0.0] * self.dna.n_nt_bases
-        self.coord_square = [0.0] * self.dna.n_nt_bases
+        # self.coord_square = [0.0] * self.dna.n_nt_bases
 
     def collect_at_step(self, step_no):
         """Collect bps distance and squared-distance at every post-preheating step.
@@ -22,4 +22,4 @@ class CoordMonitor(Monitor):
         """
         for i in range(self.dna.n_nt_bases):
             self.coord[i] += self.dna.coords_dist[i]
-            self.coord_square[i] += self.dna.coords_dist[i] ** 2
+            # self.coord_square[i] += self.dna.coords_dist[i] ** 2

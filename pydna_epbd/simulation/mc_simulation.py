@@ -49,9 +49,7 @@ class Simulation:
 
     def __move_bp(self):
         """Moves a randomly selected bp and updates new DNA state and corresponding energy."""
-        n = int(
-            self.dna.n_nt_bases * random()
-        )  # selecting random n-th base-pair, get_random_displacement()
+        n = int(self.dna.n_nt_bases * random())  # selecting random n-th base-pair, get_random_displacement()
 
         # n_next = (n + 1) % self.dna.n_nt_bases
         # n_previous = (n - 1 + self.dna.n_nt_bases) % self.dna.n_nt_bases
@@ -66,12 +64,7 @@ class Simulation:
         self.__do_random_displacement(n)
 
         # recalculating the energy
-        etotal = (
-            self.dna.total_energy
-            - self.dna.bp_energies[n][0]
-            - self.dna.bp_energies[n][1]
-            - self.dna.bp_energies[n_next][1]
-        )
+        etotal = self.dna.total_energy - self.dna.bp_energies[n][0] - self.dna.bp_energies[n][1] - self.dna.bp_energies[n_next][1]
         u2 = self.__Umors(n)
         w1, w3 = self.__Wstack(n_previous, n, n_next)
         etotal += u2 + w1 + w3
@@ -116,9 +109,7 @@ class Simulation:
         self.dna.bp_energies[n_next][1] = w3
 
         # y_n
-        self.dna.coords_dist[n] = (
-            self.dna.coords_state[n][0] - self.dna.coords_state[n][1]
-        ) * one_div_sqrt2
+        self.dna.coords_dist[n] = (self.dna.coords_state[n][0] - self.dna.coords_state[n][1]) * one_div_sqrt2
 
     def __revert_old_state(self, n):
         """Revert to old state.
@@ -156,25 +147,15 @@ class Simulation:
         Returns:
             float, float: Stacking potentials between n- and n-previous bps, and n- and n-next bps.
         """
-        y_n_previous = (
-            self.dna.coords_state[n_previous][0] - self.dna.coords_state[n_previous][1]
-        )
+        y_n_previous = self.dna.coords_state[n_previous][0] - self.dna.coords_state[n_previous][1]
         y_n = self.dna.coords_state[n][0] - self.dna.coords_state[n][1]
         y_n_next = self.dna.coords_state[n_next][0] - self.dna.coords_state[n_next][1]
 
         Kn_div_four = self.dna.kn_div_four[n]
-        w1 = (
-            Kn_div_four
-            * (1 + ro * exp(-beta1_div_sqrt_two * (y_n_previous + y_n)))
-            * (y_n_previous - y_n) ** 2
-        )
+        w1 = Kn_div_four * (1 + ro * exp(-beta1_div_sqrt_two * (y_n_previous + y_n))) * (y_n_previous - y_n) ** 2
 
         Kn_div_four = self.dna.kn_div_four[n_next]
-        w3 = (
-            Kn_div_four
-            * (1 + ro * exp(-beta1_div_sqrt_two * (y_n_next + y_n)))
-            * (y_n_next - y_n) ** 2
-        )
+        w3 = Kn_div_four * (1 + ro * exp(-beta1_div_sqrt_two * (y_n_next + y_n))) * (y_n_next - y_n) ** 2
         return w1, w3
 
     def __do_random_displacement(self, n):
@@ -187,16 +168,10 @@ class Simulation:
         dx = normalvariate(mu=0.0, sigma=1.0)  # get_gasdev()
         if random() > 0.5:  # LEFT, get_l_or_r()
             self.dna.coords_state[n][0] += dx
-            if (
-                abs(self.dna.coords_state[n][0] - self.coords_state_saved[n][1])
-                > self.ACCEPT_CUTOFF
-            ):
+            if abs(self.dna.coords_state[n][0] - self.coords_state_saved[n][1]) > self.ACCEPT_CUTOFF:
                 self.dna.coords_state[n][0] -= dx  # reverting the change
 
         else:  # RIGHT
             self.dna.coords_state[n][1] += dx
-            if (
-                abs(self.dna.coords_state[n][1] - self.coords_state_saved[n][0])
-                > self.ACCEPT_CUTOFF
-            ):
+            if abs(self.dna.coords_state[n][1] - self.coords_state_saved[n][0]) > self.ACCEPT_CUTOFF:
                 self.dna.coords_state[n][1] -= dx  # reverting the change

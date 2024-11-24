@@ -36,19 +36,11 @@ class MeltingAndFractionMonitor(Monitor):
         """Melting and fraction characteristics are collected at the end of the iteration."""
         melting, fraction = 1.0, 0.0
         for i in range(self.dna.n_nt_bases):
-            if (
-                melting == 1.0
-                and (self.melting_fraction[i] / self.n_steps_after_preheating)
-                < self.MELT_FRACTION_TRESHOLD
-            ):
+            if melting == 1.0 and (self.melting_fraction[i] / self.n_steps_after_preheating) < self.MELT_FRACTION_TRESHOLD:
                 melting = 0.0  # 0.0 means did not melt the whole DNA
 
-            if (
-                self.melting_fraction[i] / self.n_steps_after_preheating
-            ) > self.MELT_FRACTION_TRESHOLD:
+            if (self.melting_fraction[i] / self.n_steps_after_preheating) > self.MELT_FRACTION_TRESHOLD:
                 fraction += 1  # total number of base pairs whose distance is >MELT_FRACTION_TRESHOLD
 
         self.melting = melting  # if melting is 1.0, then the fraction should be 1.0, because the whole DNA melted.
-        self.fraction = (
-            fraction / self.dna.n_nt_bases
-        )  # fraction of the bps got melted.
+        self.fraction = fraction / self.dna.n_nt_bases  # fraction of the bps got melted.

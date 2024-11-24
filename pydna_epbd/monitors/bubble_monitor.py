@@ -22,8 +22,7 @@ class BubbleMonitor(Monitor):
         """
         super(BubbleMonitor, self).__init__(dna)
         self.bubbles = [
-            [[0] * self.TRESHOLD_SIZE for _ in range(self.MAX_BUB_ELEM)]
-            for _ in range(self.dna.n_nt_bases)
+            [[0] * self.TRESHOLD_SIZE for _ in range(self.MAX_BUB_ELEM)] for _ in range(self.dna.n_nt_bases)
         ]  # shape=(n_nt_bases, MAX_BUB_ELEM, TRESHOLD_SIZE)
 
     def collect_at_step(self, step_no):

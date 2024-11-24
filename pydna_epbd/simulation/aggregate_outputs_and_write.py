@@ -30,7 +30,7 @@ def aggregate_outputs_for_single_temp(list_of_monitors, input_configs, out_filep
 
         if os.environ["COORD_MONITOR"] == "On":
             coord_iter_list.append(monitors.coord_monitor.coord)
-            coord_squared_iter_list.append(monitors.coord_monitor.coord_square)
+            # coord_squared_iter_list.append(monitors.coord_monitor.coord_square)
 
         if os.environ["FLIPPING_MONITOR"] == "On":
             flip_iter_list.append(monitors.flipping_monitor.flip)
@@ -46,91 +46,51 @@ def aggregate_outputs_for_single_temp(list_of_monitors, input_configs, out_filep
             fraction_iter_list.append(monitors.melting_and_fraction_monitor.fraction)
 
         if os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] == "True":
-            melting_many_iter_list.append(
-                monitors.melting_and_fraction_many_monitor.melting_many
-            )
-            fraction_many_iter_list.append(
-                monitors.melting_and_fraction_many_monitor.fraction_many
-            )
+            melting_many_iter_list.append(monitors.melting_and_fraction_many_monitor.melting_many)
+            fraction_many_iter_list.append(monitors.melting_and_fraction_many_monitor.fraction_many)
 
     # formating outputs as dictionary, all features are averaged over the number of iterations
     outputs = {}
     if os.environ["BUBBLE_MONITOR"] == "On":
         # (n_iters, seq_len, max_bubble_elem=20, thr_sizes=20)
-        outputs["bubbles"] = (
-            np.array(bubble_iter_list)
-            if input_configs.save_full
-            else np.array(bubble_iter_list).mean(0)
-        )
+        outputs["bubbles"] = np.array(bubble_iter_list) if input_configs.save_full else np.array(bubble_iter_list).mean(0)
 
     if os.environ["COORD_MONITOR"] == "On":
         # (n_iters, seq_len)
-        outputs["coord"] = (
-            np.array(coord_iter_list)
-            if input_configs.save_full
-            else np.array(coord_iter_list).mean(0)
-        )
+        outputs["coord"] = np.array(coord_iter_list) if input_configs.save_full else np.array(coord_iter_list).mean(0)
 
         # (n_iters, seq_len)
-        outputs["coord_squared"] = (
-            np.array(coord_squared_iter_list)
-            if input_configs.save_full
-            else np.array(coord_squared_iter_list).mean(0)
-        )
+        # outputs["coord_squared"] = (
+        #     np.array(coord_squared_iter_list)
+        #     if input_configs.save_full
+        #     else np.array(coord_squared_iter_list).mean(0)
+        # )
 
     if os.environ["FLIPPING_MONITOR"] == "On":
         # (n_iters, seq_len)
-        outputs["flip"] = (
-            np.array(flip_iter_list).mean(0)
-            if input_configs.save_full
-            else np.array(flip_iter_list).mean(0)
-        )
+        outputs["flip"] = np.array(flip_iter_list).mean(0) if input_configs.save_full else np.array(flip_iter_list).mean(0)
 
     if os.environ["FLIPPING_MONITOR_VERBOSE"] == "On":
         # (n_iters, seq_len, flip_sizes=10)
-        outputs["flip_verbose"] = (
-            np.array(flip_verbose_iter_list)
-            if input_configs.save_full
-            else np.array(flip_verbose_iter_list).mean(0)
-        )
+        outputs["flip_verbose"] = np.array(flip_verbose_iter_list) if input_configs.save_full else np.array(flip_verbose_iter_list).mean(0)
 
     if os.environ["ENERGY_MONITOR"] == "On":
         # (n_iters, total_steps)
-        outputs["energy"] = (
-            np.array(energy_iter_list)
-            if input_configs.save_full
-            else np.array(energy_iter_list).mean(0)
-        )
+        outputs["energy"] = np.array(energy_iter_list) if input_configs.save_full else np.array(energy_iter_list).mean(0)
 
     if os.environ["MELTING_AND_FRACTION_MONITOR"] == "On":
         # (n_iters)
-        outputs["melting"] = (
-            np.array(melting_iter_list)
-            if input_configs.save_full
-            else np.array(melting_iter_list).mean(0)
-        )
+        outputs["melting"] = np.array(melting_iter_list) if input_configs.save_full else np.array(melting_iter_list).mean(0)
 
         # (n_iters)
-        outputs["fraction"] = (
-            np.array(fraction_iter_list)
-            if input_configs.save_full
-            else np.array(fraction_iter_list).mean(0)
-        )
+        outputs["fraction"] = np.array(fraction_iter_list) if input_configs.save_full else np.array(fraction_iter_list).mean(0)
 
     if os.environ["MELTING_AND_FRACTION_MANY_MONITOR"] == "On":
         # (n_iters, n_time_steps=100, melt_faction_sizes=20)
-        outputs["melting_many"] = (
-            np.array(melting_many_iter_list)
-            if input_configs.save_full
-            else np.array(melting_many_iter_list).mean(0)
-        )
+        outputs["melting_many"] = np.array(melting_many_iter_list) if input_configs.save_full else np.array(melting_many_iter_list).mean(0)
 
         # (n_iters, n_time_steps=100, melt_faction_sizes=20)
-        outputs["fraction_many"] = (
-            np.array(fraction_many_iter_list)
-            if input_configs.save_full
-            else np.array(fraction_many_iter_list).mean(0)
-        )
+        outputs["fraction_many"] = np.array(fraction_many_iter_list) if input_configs.save_full else np.array(fraction_many_iter_list).mean(0)
 
     utils.save_as_pickle(outputs, out_filepath)
 
